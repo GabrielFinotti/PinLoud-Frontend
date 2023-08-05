@@ -1,0 +1,19 @@
+main {
+    background: #C5F1FF;
+}
+
+footer {
+    background: #A7E9FE;
+}
+
+#text-frm-login, #text-frm-cadastro {
+    color: #309DDB;
+}
+
+#btn-login, #btn-cadastro {
+    background: #508CB8;
+}
+
+.kanit {
+    font-family: 'Kanit', sans-serif;
+}
