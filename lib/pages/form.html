@@ -20,11 +20,13 @@
 </head>
 <body>
     <header class="">
-
+        <!-- Cabeçalho -->
+        
     </header>
     <main>
-        <div id="form-login" class="d-flex flex-column align-items-center">
-            <p id="text-frm-login" class="lead kanit">Login</p>
+        <!-- Conteúdo do formulário de login -->
+        <div id="form-login" class="d-flex flex-column align-items-center pb-5">
+            <p id="text-frm-login" class="lead kanit fs-4">Login</p>
             <form action="" class="">
                 <div class="mb-3">
                     <input type="email" class="form-control form-control-lg rounded-4" name="login-email" id="login-email" placeholder="E-mail">
@@ -46,14 +48,15 @@
                 <a href="#" class="text-black fs-5 fw-normal kanit">Cadastre-se</a>
             </div>
         </div>
-        <div id="form-cadastro" class="d-none flex-column align-items-center">
-            <p id="text-frm-cadastro" class="lead kanit">Cadastro</p>
+        <!-- Conteúdo do formulário de cadastro -->
+        <div id="form-cadastro" class="d-none flex-column align-items-center pb-5">
+            <p id="text-frm-cadastro" class="lead kanit fs-4">Cadastro</p>
             <form action="">
                 <div class="mb-3">
                     <input type="text" name="cad-user" id="cad-user" class="form-control form-control-lg rounded-4" placeholder="Usuário">
                 </div>
                 <div class="mb-3">
-                    <input type="email" name="cad-email" id="cad-emial" class="form-control form-control-lg rounded-4" placeholder="E-mail">
+                    <input type="email" name="cad-email" id="cad-email" class="form-control form-control-lg rounded-4" placeholder="E-mail">
                 </div>
                 <div class="mb-3">
                     <input type="password" name="cad-password" id="cad-password" class="form-control form-control-lg rounded-4" placeholder="Senha">
@@ -72,27 +75,47 @@
         </div>
     </main>
     <footer>
-        <div>
-            <h5>Devs</h5>
-            <a href="#">Gabriel H. Finotti</a>
-            <a href="#">Júlia Lucena</a>
-            <a href="#">Felipe Torres</a>
-            <a href="#">Diogo</a>
-            <a href="#">Henrique</a>
-        </div>
-        <div>
-            <p>
-                <strong>
-                    Todos os Direitos Reservados <br>
-                    &copy;2023 Equipe PinLoud
-                </strong>
-            </p>
-        </div>
-        <div>
-            <h5>Contatos</h5>
-            <a href="#">suporte@pinloud.com</a>
-            <a href="#">denuncia@pinloud.com</a>
-            <a href="#">reportarbug@pinloud.com</a>
+        <!-- Rodapé -->
+        <div class="container-xxl">
+            <div class="row pt-3">
+                <div class="col-12 d-flex flex-column">
+                    <h5>Devs</h5>
+                    <div class="pb-2 d-flex align-items-center gap-2">
+                        <i class="bi-github"></i>
+                        <a href="#" class="text-decoration-none text-black">Gabriel H. Finotti.</a>
+                    </div>
+                    <div class="pb-2 d-flex align-items-center gap-2">
+                        <i class="bi-github"></i>
+                        <a href="#" class="text-decoration-none text-black">Júlia Lucena.</a>
+                    </div>
+                    <div class="pb-2 d-flex align-items-center gap-2">
+                        <i class="bi-github"></i>
+                        <a href="#" class="text-decoration-none text-black">Felipe Torres.</a>
+                    </div>
+                    <div class="pb-2 d-flex align-items-center gap-2">
+                        <i class="bi-github"></i>
+                        <a href="#" class="text-decoration-none text-black">Diogo.</a>
+                    </div>
+                    <div class="pb-2 d-flex align-items-center gap-2">
+                        <i class="bi-github"></i>
+                        <a href="#" class="text-decoration-none text-black">Henrique.</a>
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column">
+                    <h5>Contatos</h5>
+                    <a href="#" class="text-decoration-none text-black pb-2 fw-normal">suporte@pinloud.com</a>
+                    <a href="#" class="text-decoration-none text-black pb-2 fw-normal">denuncia@pinloud.com</a>
+                    <a href="#" class="text-decoration-none text-black pb-2 fw-normal">reportarbug@pinloud.com</a>
+                </div>
+                <div class="col-12">
+                    <p>
+                        <strong>
+                            Todos os Direitos Reservados <br>
+                            &copy;2023 Equipe PinLoud&reg;.
+                        </strong>
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
