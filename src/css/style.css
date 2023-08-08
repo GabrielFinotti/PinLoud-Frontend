@@ -37,3 +37,32 @@ footer {
 #btn-login, #btn-cadastro {
     background: #508CB8;
 }
+/*Pag Index */
+.background-image{
+    display: flex;
+    background-position: center center;
+}
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .search-box-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 5px;
+  }
+  .search-box {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .search-box:focus {
+    box-shadow: none;
+  }
+  .search-icon {
+    background-color: transparent;
+    border: none;
+    color: #6c757d; /* Define a cor cinza escuro */
+  }
