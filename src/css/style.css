@@ -49,6 +49,7 @@ footer {
     height: 100vh;
   }
   .search-box-wrapper {
+    background-color: white;
     border: 1px solid #ccc;
     border-radius: 25px;
     padding: 5px;
