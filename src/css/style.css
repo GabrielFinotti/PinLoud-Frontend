@@ -37,3 +37,7 @@ footer {
 #btn-login, #btn-cadastro {
     background: #508CB8;
 }
+/* Pág conteudo principal */
+mark {
+    background: #A7E9FE !important;
+}
