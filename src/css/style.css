@@ -6,21 +6,25 @@
 header {
     background: #A7E9FE;
 }
+/* Conteúdo principal */
+main {
+    background: #C5F1FF;
+}
 
-#logo {
-    width: 80px;
+#img-logo {
+    width: 65px;
 }
 
 #text-logo {
     left: -8px
 }
-/* Conteúdo principal */
-main {
-    background: #C5F1FF;
-}
 /* Rodapé */
 footer {
     background: #A7E9FE;
+}
+
+#text-copy {
+    text-indent: 10px;
 }
 /* Pág formulário */
 #text-frm-login, #text-frm-cadastro, 
