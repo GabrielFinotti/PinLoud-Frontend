@@ -16,7 +16,12 @@ main {
 }
 
 #text-logo {
-    left: -8px
+    left: -8px;
+    color: #309DDB;
+}
+
+.nav-link{
+    color: #309DDB;
 }
 /* Rodapé */
 footer {
