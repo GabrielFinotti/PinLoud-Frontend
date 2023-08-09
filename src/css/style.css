@@ -2,61 +2,6 @@
 .kanit {
     font-family: 'Kanit', sans-serif;
 }
-/* Cabeçlho */
-header {
-    background: #A7E9FE;
-}
-
-.nav-link{
-    color: #309DDB;
-}
-/* Conteúdo principal */
-main {
-    background: #C5F1FF;
-}
-/* Rodapé */
-footer {
-    background: #A7E9FE;
-}
-
-#text-copy {
-    text-indent: 10px;
-}
-/* Pág formulário */
-#form-login{
-    scale: 0.5;
-    opacity: 0;
-}
-
-#form-cad {
-    scale: 0.5;
-    opacity: 0;
-}
-
-#text-frm-login, #text-frm-cadastro, 
-#login-email::placeholder, #login-password::placeholder,
-#cad-user::placeholder, #cad-email::placeholder,
-#cad-password::placeholder{
-    color: #309DDB;
-}
-
-
-#btn-login, #btn-cadastro {
-    background: #508CB8;
-}
-/* Pág conteudo principal */
-#img-logo {
-    width: 65px;
-}
-
-#text-logo {
-    left: -8px;
-    color: #309DDB;
-}
-
-mark {
-    background: #A7E9FE !important;
-}
 /* Animações */
 @keyframes showForm {
     0% {
@@ -100,4 +45,59 @@ mark {
     animation-duration: 1300ms;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
+}
+/* Cabeçlho */
+header {
+    background: #A7E9FE;
+}
+
+.nav-link{
+    color: #309DDB;
+}
+/* Conteúdo principal */
+main {
+    background: #C5F1FF;
+}
+/* Rodapé */
+footer {
+    background: #A7E9FE;
+}
+
+#text-copy {
+    text-indent: 10px;
+}
+/* Pág formulário */
+#form-login{
+    scale: 0.5;
+    opacity: 0;
+}
+
+#form-cad {
+    scale: 0.5;
+    opacity: 0;
+}
+
+#text-frm-login, #text-frm-cadastro, 
+#login-email::placeholder, #login-password::placeholder,
+#cad-user::placeholder, #cad-email::placeholder,
+#cad-password::placeholder{
+    color: #309DDB;
+}
+
+
+#btn-login, #btn-cadastro {
+    background: #508CB8;
+}
+/* Pág explorar */
+#img-logo {
+    width: 65px;
+}
+
+#text-logo {
+    left: -8px;
+    color: #309DDB;
+}
+
+mark {
+    background: #A7E9FE !important;
 }
