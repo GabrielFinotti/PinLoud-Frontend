@@ -15,7 +15,7 @@ function switchFormCad() {
     formCad.classList.replace('close-form', 'show-form')
 }
 
-function switchFormLogin() {
+    function switchFormLogin() {
     formCad.classList.replace('show-form', 'close-form')
     setTimeout(() => {
         formCad.classList.replace('d-flex', 'd-none')
