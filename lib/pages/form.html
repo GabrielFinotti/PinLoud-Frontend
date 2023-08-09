@@ -46,10 +46,10 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main id="main-form">
         <!-- Conteúdo do formulário de login -->
         <div id="form-login" class="d-flex flex-column align-items-center show-form py-5">
-            <p id="text-frm-login" class="lead kanit fs-4">Login</p>
+            <p id="text-frm-login" class="lead kanit fs-2">Login</p>
             <form action="" class="">
                 <div class="mb-3">
                     <input type="email" class="form-control form-control-lg rounded-4" name="email" id="login-email" placeholder="E-mail" required>
@@ -68,12 +68,12 @@
             </form>
             <div class="d-flex flex-column align-items-center mt-3">
                 <p class="m-0 kanit">Não tem conta?</p>
-                <a href="#" onclick="switchFormCad()" class="text-black fs-5 fw-normal text-decoration-underline kanit">Cadastre-se</a>
+                <a href="#form-login" onclick="switchFormCad()" class="text-black fs-3 fw-normal kanit">Cadastre-se</a>
             </div>
         </div>
         <!-- Conteúdo do formulário de cadastro -->
-        <div id="form-cad" class="d-none flex-column align-items-center py-5">
-            <p id="text-frm-cadastro" class="lead kanit fs-4">Cadastro</p>
+        <div id="form-cad" class="d-none flex-column align-items-center close-form py-5">
+            <p id="text-frm-cadastro" class="lead kanit fs-2">Cadastro</p>
             <form action="">
                 <div class="mb-3">
                     <input type="text" name="user" id="cad-user" class="form-control form-control-lg rounded-4" placeholder="Usuário" required>
@@ -93,7 +93,7 @@
             </form>
             <div class="d-flex flex-column align-items-center mt-3">
                 <p class="m-0 kanit">Ja tem uma conta?</p>
-                <a href="#" onclick="switchFormLogin()" class="fs-5 text-black fw-normal kanit">Acesse aqui</a>
+                <a href="#form-cad" onclick="switchFormLogin()" class="fs-3 text-black fw-normal kanit">Acesse aqui</a>
             </div>
         </div>
     </main>
