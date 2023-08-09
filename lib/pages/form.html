@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../src/css/style.css">
     <!-- Script -->
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../../src/js/form.js" defer></script>
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -35,26 +36,26 @@
                         <hr>
                         <a href="criar.html" class="nav-link me-lg-5">Criar</a>
                         <hr>
-                        <a href="conta.html" class="nav-link d-lg-none">Conta</a>
+                        <a href="form.html" class="nav-link d-lg-none">Conta</a>
                     </div>
                 </div>
-                <a href="conta.html" class="d-none d-lg-flex align-items-center nav-link ms-5">
-                    <span class="me-2">Conta</span>
+                <a href="form.html" class="d-none d-lg-flex align-items-center nav-link ms-5">
+                    <span class="me-2" style="color: #309DDB;">Conta</span>
                     <i class="bi-person-circle fs-2" style="color: #309DDB;"></i>
                 </a>
             </div>
         </nav>
     </header>
-    <main>
+    <main id="main-form">
         <!-- Conteúdo do formulário de login -->
-        <div id="form-login" class="d-flex flex-column align-items-center py-5">
-            <p id="text-frm-login" class="lead kanit fs-4">Login</p>
+        <div id="form-login" class="d-flex flex-column align-items-center show-form py-5">
+            <p id="text-frm-login" class="lead kanit fs-2">Login</p>
             <form action="" class="">
                 <div class="mb-3">
-                    <input type="email" class="form-control form-control-lg rounded-4" name="login-email" id="login-email" placeholder="E-mail" required>
+                    <input type="email" class="form-control form-control-lg rounded-4" name="email" id="login-email" placeholder="E-mail" required>
                   </div>
                   <div class="mb-2">
-                    <input type="password" name="login-password" class="form-control form-control-lg rounded-4" id="login-password" placeholder="Senha" required>
+                    <input type="password" name="password" class="form-control form-control-lg rounded-4" id="login-password" placeholder="Senha" required>
                     <a href="#" class="form-text fst-italic text-black">Esqueci a senha</a>
                   </div>
                   <div class="form-check mb-3">
@@ -67,24 +68,24 @@
             </form>
             <div class="d-flex flex-column align-items-center mt-3">
                 <p class="m-0 kanit">Não tem conta?</p>
-                <a href="#" class="text-black fs-5 fw-normal kanit">Cadastre-se</a>
+                <a href="#form-login" onclick="switchFormCad()" class="text-black fs-3 fw-normal kanit">Cadastre-se</a>
             </div>
         </div>
         <!-- Conteúdo do formulário de cadastro -->
-        <div id="form-cadastro" class="d-none flex-column align-items-center py-5">
-            <p id="text-frm-cadastro" class="lead kanit fs-4">Cadastro</p>
+        <div id="form-cad" class="d-none flex-column align-items-center close-form py-5">
+            <p id="text-frm-cadastro" class="lead kanit fs-2">Cadastro</p>
             <form action="">
                 <div class="mb-3">
-                    <input type="text" name="cad-user" id="cad-user" class="form-control form-control-lg rounded-4" placeholder="Usuário" required>
+                    <input type="text" name="user" id="cad-user" class="form-control form-control-lg rounded-4" placeholder="Usuário" required>
                 </div>
                 <div class="mb-3">
-                    <input type="email" name="cad-email" id="cad-email" class="form-control form-control-lg rounded-4" placeholder="E-mail" required>
+                    <input type="email" name="email" id="cad-email" class="form-control form-control-lg rounded-4" placeholder="E-mail" required>
                 </div>
                 <div class="mb-3">
-                    <input type="password" name="cad-password" id="cad-password" class="form-control form-control-lg rounded-4" placeholder="Senha" required>
+                    <input type="password" name="password" id="cad-password" class="form-control form-control-lg rounded-4" placeholder="Senha" required>
                 </div>
                 <div class="mb-3">
-                    <input type="password" name="cad-password" id="cad-password" class="form-control form-control-lg rounded-4" placeholder="Confirme sua senha" required>
+                    <input type="password" name="password" id="cad-password" class="form-control form-control-lg rounded-4" placeholder="Confirme sua senha" required>
                 </div>
                 <div class="d-flex align-items-center flex-column">
                     <input id="btn-cadastro" type="submit" value="Cadastrar" class="btn btn-lg text-white rounded-4 w-75 fw-bold">
@@ -92,7 +93,7 @@
             </form>
             <div class="d-flex flex-column align-items-center mt-3">
                 <p class="m-0 kanit">Ja tem uma conta?</p>
-                <a href="#" class="fs-5 text-black fw-normal kanit">Acesse aqui</a>
+                <a href="#form-cad" onclick="switchFormLogin()" class="fs-3 text-black fw-normal kanit">Acesse aqui</a>
             </div>
         </div>
     </main>
@@ -123,12 +124,14 @@
                         <a href="#" class="text-decoration-none text-black">Henrique.</a>
                     </div>
                 </div>
+                <hr class="d-lg-none">
                 <div class="col-12 col-lg-2 d-flex flex-column order-lg-2">
                     <h5>Contatos</h5>
                     <a href="#" class="text-decoration-none text-black pb-2 fw-normal">suporte@pinloud.com</a>
                     <a href="#" class="text-decoration-none text-black pb-2 fw-normal">denuncia@pinloud.com</a>
                     <a href="#" class="text-decoration-none text-black pb-2 fw-normal">reportarbug@pinloud.com</a>
                 </div>
+                <hr class="d-lg-none">
                 <div class="col-12 col-lg-5 order-lg-1">
                     <p>
                         <strong>

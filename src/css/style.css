@@ -2,21 +2,61 @@
 .kanit {
     font-family: 'Kanit', sans-serif;
 }
+/* Animações */
+@keyframes showForm {
+    0% {
+        opacity: 0;
+        scale: 0.5;
+    }
+    75% {
+        opacity: 0.5;
+        scale: 1.2;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.show-form {
+    animation-name: showForm;
+    animation-duration: 1300ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes closeForm {
+    0% {
+        opacity: 1;
+        scale: 1;
+    }
+    75% {
+        opacity: 0.5;
+        scale: 1.2;
+    }
+    100% {
+        opacity: 0;
+        scale: 0.5;
+    }
+}
+
+.close-form {
+    animation-name: closeForm;
+    animation-duration: 1300ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
 /* Cabeçlho */
 header {
     background: #A7E9FE;
 }
+
+.nav-link{
+    color: #309DDB;
+}
 /* Conteúdo principal */
 main {
     background: #C5F1FF;
-}
-
-#img-logo {
-    width: 65px;
-}
-
-#text-logo {
-    left: -8px
 }
 /* Rodapé */
 footer {
@@ -27,6 +67,16 @@ footer {
     text-indent: 10px;
 }
 /* Pág formulário */
+#form-login{
+    scale: 0.5;
+    opacity: 0;
+}
+
+#form-cad {
+    scale: 0.5;
+    opacity: 0;
+}
+
 #text-frm-login, #text-frm-cadastro, 
 #login-email::placeholder, #login-password::placeholder,
 #cad-user::placeholder, #cad-email::placeholder,
@@ -34,8 +84,22 @@ footer {
     color: #309DDB;
 }
 
+
 #btn-login, #btn-cadastro {
     background: #508CB8;
+}
+/* Pág explorar */
+#img-logo {
+    width: 65px;
+}
+
+#text-logo {
+    left: -8px;
+    color: #309DDB;
+}
+
+mark {
+    background: #A7E9FE !important;
 }
 /*Pag Index */
 .background-image{
@@ -65,5 +129,5 @@ footer {
   .search-icon {
     background-color: transparent;
     border: none;
-    color: #6c757d; /* Define a cor cinza escuro */
+    color: #6c757d; 
   }

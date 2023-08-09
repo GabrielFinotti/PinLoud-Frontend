@@ -31,15 +31,15 @@
                     <div class="navbar-nav mx-auto">
                         <a href="../../index.html" class="nav-link">Home</a>
                         <hr>
-                        <a href="explorar.html" class="nav-link">Explorar</a>
+                        <a href="explorar.html" class="nav-link active">Explorar</a>
                         <hr>
                         <a href="criar.html" class="nav-link me-lg-5">Criar</a>
                         <hr>
-                        <a href="conta.html" class="nav-link d-lg-none">Conta</a>
+                        <a href="form.html" class="nav-link d-lg-none">Conta</a>
                     </div>
                 </div>
-                <a href="conta.html" class="d-none d-lg-flex align-items-center nav-link ms-5">
-                    <span class="me-2">Conta</span>
+                <a href="form.html" class="d-none d-lg-flex align-items-center nav-link ms-5">
+                    <span class="me-2" style="color: #309DDB;">Conta</span>
                     <i class="bi-person-circle fs-2" style="color: #309DDB;"></i>
                 </a>
             </div>
@@ -47,7 +47,80 @@
     </header>
     <main>
         <!-- Conteudo Principal -->
-        
+        <div class="container py-3">
+            <div class="row mb-3">
+                <div class="dropdown col-2 offset-md-1 offset-lg-2 text-end p-0 ps-3">
+                    <button class="dropdown-toggle btn btn-outline-light" data-bs-toggle="dropdown" style="color: #309DDB;">Tipos</button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#" class="dropdown-item">Todos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-item">Gif</a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-item">Img</a>
+                        </li>
+                    </ul>
+                </div>
+                <form action="#" method="get" class="col col-md-8 col-lg-5 p-0 px-3">
+                    <div class="input-group">
+                        <input type="search" name="search-img" id="search-img" placeholder="Pesquise pela Imagem..." class="form-control bg-light bg-opacity-50">
+                        <button type="submit" class="btn btn-outline-light">
+                            <i class="bi-search" style="color: #309DDB;"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <div class="row row-cols-md-2 row-cols-lg-4">
+                <div class="p-2">
+                    <img src="../img/dragoes-qual-a-origem-do-mito-e-suas-variacoes-pelo-mundo-1.png" alt="Img-test" class="w-100 img">
+                    <h4 class="mt-1 img-name">Dragão</h4>
+                    <div class="d-flex flex-wrap gap-2 pt-2 img-tag">
+                        <p>
+                            <mark class=" p-2 rounded-3 text-uppercase">img</mark>
+                        </p>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <img src="../img/b-2163-b-971-daffe-2553-d-7205642-b-4883-cd-6-df-6-c-3-r-17501179-v-2-hq.png"" alt="Img-test" class="w-100 img">
+                    <h4 class="mt-1 img-name">Dragão</h4>
+                    <div class="d-flex flex-wrap gap-2 pt-2 img-tag">
+                        <p>
+                            <mark class=" p-2 rounded-3 text-uppercase">gif</mark>
+                        </p>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <img src="../img/dragoes-qual-a-origem-do-mito-e-suas-variacoes-pelo-mundo-1.png" alt="Img-test" class="w-100 img">
+                    <h4 class="mt-1 img-name">Dragão</h4>
+                    <div class="d-flex flex-wrap gap-2 pt-2 img-tag">
+                        <p>
+                            <mark class=" p-2 rounded-3 text-uppercase">img</mark>
+                        </p>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <img src="../img/dragoes-qual-a-origem-do-mito-e-suas-variacoes-pelo-mundo-1.png" alt="Img-test" class="w-100 img">
+                    <h4 class="mt-1 img-name">Dragão</h4>
+                    <div class="d-flex flex-wrap gap-2 pt-2 img-tag">
+                        <p>
+                            <mark class=" p-2 rounded-3 text-uppercase">gif</mark>
+                        </p>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <img src="../img/b-2163-b-971-daffe-2553-d-7205642-b-4883-cd-6-df-6-c-3-r-17501179-v-2-hq.png" alt="Img-test" class="w-100 img">
+                    <h4 class="mt-1 img-name">Dragão</h4>
+                    <div class="d-flex flex-wrap gap-2 pt-2 img-tag">
+                        <p>
+                            <mark class=" p-2 rounded-3 text-uppercase">img</mark>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <!-- Rodapé -->
@@ -76,12 +149,14 @@
                         <a href="#" class="text-decoration-none text-black">Henrique.</a>
                     </div>
                 </div>
+                <hr class="d-lg-none">
                 <div class="col-12 col-lg-2 d-flex flex-column order-lg-2">
                     <h5>Contatos</h5>
                     <a href="#" class="text-decoration-none text-black pb-2 fw-normal">suporte@pinloud.com</a>
                     <a href="#" class="text-decoration-none text-black pb-2 fw-normal">denuncia@pinloud.com</a>
                     <a href="#" class="text-decoration-none text-black pb-2 fw-normal">reportarbug@pinloud.com</a>
                 </div>
+                <hr class="d-lg-none">
                 <div class="col-12 col-lg-5 order-lg-1">
                     <p>
                         <strong>
