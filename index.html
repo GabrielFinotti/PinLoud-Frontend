@@ -16,8 +16,8 @@
     <!-- Scripts -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 </head>
 <body>
@@ -55,14 +55,16 @@
         <div class="container-fluid">
             <div class="row centered-content">
               <div class="col-md-6">
-                <div class="input-group search-box-wrapper">
-                  <input type="text" class="form-control search-box" placeholder="Digite sua busca...">
-                  <div class="input-group-append">
-                    <button class="btn search-icon" type="button">
-                      <i class="fas fa-search"></i> <!-- Ícone de lupa do Font Awesome -->
-                    </button>
-                  </div>
-                </div>
+                <form action="" method="get">
+                    <div class="input-group search-box-wrapper">
+                        <input type="search" class="form-control search-box" placeholder="Digite sua busca...">
+                        <div class="input-group-append">
+                          <button class="btn search-icon" type="submit">
+                            <i class="fas fa-search"></i> <!-- Ícone de lupa do Font Awesome -->
+                          </button>
+                        </div>
+                      </div>
+                </form>
               </div>
             </div>
           </div>
