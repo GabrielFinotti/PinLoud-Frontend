@@ -101,3 +101,42 @@ footer {
 mark {
     background: #A7E9FE !important;
 }
+/*Pag Index */
+.background-image{
+    display: flex;
+    background-position: center center;
+}
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .search-box-wrapper {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 5px;
+  }
+  .search-box {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .search-box:focus {
+    box-shadow: none;
+  }
+  .search-icon {
+    background-color: transparent;
+    border: none;
+    color: #6c757d; 
+  }
+/*Criar*/
+.form-criar{
+    background: #C5F1FF;
+    
+}
+.card{
+    background: #C5F1FF;
+}
+
