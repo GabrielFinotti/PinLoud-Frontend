@@ -11,9 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/style.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <!-- Scripts -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -45,8 +50,22 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main style="background-image: url('lib/img/planodefundo.jpg'); background-size: cover; background-repeat: no-repeat;">
         <!-- Conteudo Principal -->
+        <div class="container-fluid">
+            <div class="row centered-content">
+              <div class="col-md-6">
+                <div class="input-group search-box-wrapper">
+                  <input type="text" class="form-control search-box" placeholder="Digite sua busca...">
+                  <div class="input-group-append">
+                    <button class="btn search-icon" type="button">
+                      <i class="fas fa-search"></i> <!-- Ícone de lupa do Font Awesome -->
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </main>
     <footer>
         <!-- Rodapé -->
