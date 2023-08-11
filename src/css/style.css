@@ -46,9 +46,18 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
-/* Cabeçlho */
+/* Cabeçalho */
 header {
     background: #A7E9FE;
+}
+
+#img-logo {
+    width: 65px;
+}
+
+#text-logo {
+    left: -8px;
+    color: #309DDB;
 }
 
 .nav-link{
@@ -89,17 +98,25 @@ footer {
     background: #508CB8;
 }
 /* Pág explorar */
-#img-logo {
-    width: 65px;
+#gallery-img {
+    column-count: 2;
+    column-gap: 10px;
 }
 
-#text-logo {
-    left: -8px;
-    color: #309DDB;
+@media (min-width: 768px) {
+    #gallery-img {
+        column-count: 4;
+    }
 }
 
-mark {
-    background: #A7E9FE !important;
+@media (min-width: 992px) {
+    #gallery-img {
+        column-count: 6;
+    }
+}
+
+.mark {
+    background: #5dd9ff !important;
 }
 /*Pag Index */
 .background-image{
@@ -111,26 +128,30 @@ mark {
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-  .search-box-wrapper {
+}
+
+.search-box-wrapper {
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 25px;
     padding: 5px;
-  }
-  .search-box {
+}
+
+.search-box {
     border: none;
     background-color: transparent;
     box-shadow: none;
-  }
-  .search-box:focus {
+}
+
+.search-box:focus {
     box-shadow: none;
-  }
-  .search-icon {
+}
+
+.search-icon {
     background-color: transparent;
     border: none;
     color: #6c757d; 
-  }
+}
 /*Criar*/
 .form-criar{
     background: #C5F1FF;
