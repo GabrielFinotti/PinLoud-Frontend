@@ -115,6 +115,21 @@ footer {
     }
 }
 
+.text-img {
+    left: 6px;
+    bottom: 10px;
+}
+
+.tag-img {
+    font-size: 12px;
+}
+
+.download-img {
+    right: 6px;
+    bottom: 25px;
+    font-size: 16px;
+}
+
 .mark {
     background: #5dd9ff !important;
 }
