@@ -1,23 +1,29 @@
-// Visualização de prévia
+// Pré-visualização
+document.addEventListener("DOMContentLoaded", function () {
+    var uploadInput = document.getElementById("uploadInput");
+    var previewImage = document.getElementById("previewImage");
 
-function updatePreviewImage() {
-    var uploadInput = document.getElementById('uploadInput');
-    var previewImage = document.getElementById('previewImage');
-    var uploadedImage = document.getElementById('uploadedImage');
-
-    uploadInput.addEventListener('change', function (event) {
+    uploadInput.addEventListener("change", function (event) {
         var file = event.target.files[0];
 
         if (file) {
-            var reader = new FileReader();
+            var validExtensions = ["jpg", "jpeg", "png", "gif"];
+            var fileExtension = file.name.split(".").pop().toLowerCase();
 
-            reader.onload = function (e) {
-                previewImage.src = e.target.result;
-                uploadedImage.src = e.target.result;
-                uploadedImage.style.display = 'block';
-            };
+            if (validExtensions.includes(fileExtension)) {
+                var reader = new FileReader();
 
-            reader.readAsDataURL(file);
+                reader.onload = function (e) {
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = "block";
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                alert("Por favor, escolha um arquivo com extensão jpg, jpeg, png ou gif.");
+                uploadInput.value = ""; // Limpar a seleção do arquivo inválido
+                previewImage.style.display = "none"; // Esconder a imagem de pré-visualização
+            }
         }
     });
-}
+});
