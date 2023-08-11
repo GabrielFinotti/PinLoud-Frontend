@@ -76,6 +76,12 @@ footer {
     text-indent: 10px;
 }
 /* Pág formulário */
+@media (min-width: 768px) {
+    #main-form {
+        height: 558px;
+    }
+}
+
 #form-login{
     scale: 0.5;
     opacity: 0;
@@ -98,6 +104,11 @@ footer {
     background: #508CB8;
 }
 /* Pág explorar */
+#dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+}
+
 #gallery-img {
     column-count: 2;
     column-gap: 10px;
@@ -117,21 +128,22 @@ footer {
 
 .text-img {
     left: 6px;
-    bottom: 10px;
+    bottom: 4px;
 }
 
 .tag-img {
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .download-img {
     right: 6px;
-    bottom: 25px;
-    font-size: 16px;
+    bottom: 20px;
+    font-size: 14px;
 }
 
 .mark {
-    background: #5dd9ff !important;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(3px);
 }
 /*Pag Index */
 .background-image{
@@ -167,7 +179,11 @@ footer {
     border: none;
     color: #6c757d; 
 }
-/*Criar*/
+/*Pág Criar*/
+#main-criar {
+    height: 559px;
+}
+
 .form-criar{
     background: #C5F1FF;
     
