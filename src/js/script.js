@@ -27,3 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
         reader.readAsDataURL(file);
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const imageParam = urlParams.get("image");
+    const downloadLink = document.getElementById("downloadLink");
+
+    if (imageParam) {
+        const imagemAmpliada = document.getElementById("imagemAmpliada");
+        imagemAmpliada.src = imageParam;
+
+        
+        downloadLink.href = imageParam;
+        downloadLink.setAttribute("download", ""); 
+    }
+});
+

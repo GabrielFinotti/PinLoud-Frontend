@@ -191,4 +191,16 @@ footer {
 .card{
     background: #C5F1FF;
 }
-
+.ad-container {
+    display: flex;
+    align-items: center; /* Alinhar verticalmente no centro */
+    justify-content: space-between; /* Espaço entre a imagem e o botão */
+    width: 200px;
+    height: auto;
+    margin: 10px; 
+}
+.download-button{
+    width: 300px;
+    height: auto;
+    align-items: center;
+}
