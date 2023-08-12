@@ -95,7 +95,7 @@ footer {
 #text-frm-login, #text-frm-cadastro, 
 #login-email::placeholder, #login-password::placeholder,
 #cad-user::placeholder, #cad-email::placeholder,
-#cad-password::placeholder{
+#cad-password::placeholder, #cad-password-confirm::placeholder{
     color: #309DDB;
 }
 
