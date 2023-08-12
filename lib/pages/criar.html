@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Foto</title>
+    <!-- Links -->
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../src/css/style.css">
+    <!-- Scripts -->
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../../src/js/script.js"></script>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-xxl">
+                <a href="../../index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="../../favicon.ico" alt="Logo" id="img-logo">
+                    <span class="position-relative" id="text-logo">PinLoud</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavBar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuNavBar">
+                    <div class="navbar-nav mx-auto">
+                        <a href="../../index.html" class="nav-link">Home</a>
+                        <hr>
+                        <a href="explorar.html" class="nav-link">Explorar</a>
+                        <hr>
+                        <a href="criar.html" class="nav-link me-lg-5 active">Criar</a>
+                        <hr>
+                        <a href="form.html" class="nav-link d-lg-none">Conta</a>
+                    </div>
+                </div>
+                <a href="form.html" class="d-none d-lg-flex align-items-center nav-link ms-5">
+                    <span class="me-2">Conta</span>
+                    <i class="bi-person-circle fs-2" style="color: #309DDB;"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main id="main-criar">
+        <!-- Conteudo Principal -->
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card border-0 mb-4">
+                        <div class="card-body text-center">
+                            <label for="uploadInput" class="btn btn-secondary btn-upload">
+                                <input type="file" id="uploadInput" style="display: none;">
+                                <i class="fas fa-upload mr-2"></i> Fazer Upload
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card border-0 custom-card">
+                        <img id="previewImage" class="img-fluid">
+                    </div>
+                    <p id="errorMessage" class="text-danger mt-2"></p>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0" style="background: #C5F1FF; border-radius: 50px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Criar Foto</h4>
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="nameInput">Nome:</label>
+                                    <input type="text" class="form-control" id="nameInput" placeholder="Nome da foto" style= "border-radius: 12px;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="descriptionTextarea">Descrição:</label>
+                                    <textarea class="form-control" id="descriptionTextarea" rows="3" placeholder="Descrição da foto" style="background: white; border-radius: 15px;"></textarea>
+                                </div>
+                               <!-- ... (código anterior) ... -->
+                                <div class="form-group">
+                                    <label>Palavra-chave:</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="keywordRadio" id="keywordRadioImagem" value="imagem">
+                                        <label class="form-check-label" for="keywordRadioImagem">Imagem</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="keywordRadio" id="keywordRadioGif" value="gif">
+                                        <label class="form-check-label" for="keywordRadioGif">GIF</label>
+                                    </div>
+                                    <div class="input-group button-create">
+                                        <button type="submit" class="btn btn-primary d-block mx-auto mt-3">Enviar</button>
+                                    </div>
+                                </div>                              
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4"></div>
+    </main>
+    <footer>
+        <!-- Rodapé -->
+        <div class="container-xxl">
+            <div class="row pt-3">
+                <div class="col-12 col-lg-5 d-flex flex-column order-lg-0">
+                    <h5>Devs</h5>
+                    <div class="pb-2 d-flex align-items-center gap-2">
+                        <i class="bi-github"></i>
+                        <a href="#" class="text-decoration-none text-black">Gabriel H. Finotti.</a>
+                    </div>
+                    <div class="pb-2 d-flex align-items-center gap-2">
+                        <i class="bi-github"></i>
+                        <a href="#" class="text-decoration-none text-black">Júlia Lucena.</a>
+                    </div>
+                    <div class="pb-2 d-flex align-items-center gap-2">
+                        <i class="bi-github"></i>
+                        <a href="#" class="text-decoration-none text-black">Felipe Torres.</a>
+                    </div>
+                    <div class="pb-2 d-flex align-items-center gap-2">
+                        <i class="bi-github"></i>
+                        <a href="#" class="text-decoration-none text-black">Diogo.</a>
+                    </div>
+                    <div class="pb-2 d-flex align-items-center gap-2">
+                        <i class="bi-github"></i>
+                        <a href="#" class="text-decoration-none text-black">Henrique.</a>
+                    </div>
+                </div>
+                <hr class="d-lg-none">
+                <div class="col-12 col-lg-2 d-flex flex-column order-lg-2">
+                    <h5>Contatos</h5>
+                    <a href="#" class="text-decoration-none text-black pb-2 fw-normal">suporte@pinloud.com</a>
+                    <a href="#" class="text-decoration-none text-black pb-2 fw-normal">denuncia@pinloud.com</a>
+                    <a href="#" class="text-decoration-none text-black pb-2 fw-normal">reportarbug@pinloud.com</a>
+                </div>
+                <hr class="d-lg-none">
+                <div class="col-12 col-lg-5 order-lg-1">
+                    <p>
+                        <strong>
+                            Todos os Direitos Reservados <br>
+                            &copy;2023 Equipe PinLoud&reg;.
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
