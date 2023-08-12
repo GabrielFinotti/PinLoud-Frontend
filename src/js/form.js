@@ -1,7 +1,7 @@
 // Função para a troca de formulários!
-var formLogin = document.getElementById('form-login')
-var formCad = document.getElementById('form-cad')
-var mainForm = document.getElementById('main-form')
+let formLogin = document.getElementById('form-login')
+let formCad = document.getElementById('form-cad')
+let mainForm = document.getElementById('main-form')
 var errorMessage = document.getElementById('error-message');
 var successMessage = document.getElementById('success-message');
 var cadUsername = document.getElementById('cad-user');
@@ -14,7 +14,7 @@ function switchFormCad() {
     formLogin.classList.replace('show-form', 'close-form')
     setTimeout(() => {
         formLogin.classList.replace('d-flex', 'd-none')
-        mainForm.style.height = '540px'
+        mainForm.style.height = '558px'
     }, 1400);
     setTimeout(() => {
         formCad.classList.replace('d-none', 'd-flex')
@@ -22,14 +22,14 @@ function switchFormCad() {
     formCad.classList.replace('close-form', 'show-form')
 }
 
-    function switchFormLogin() {
+function switchFormLogin() {
     formCad.classList.replace('show-form', 'close-form')
     setTimeout(() => {
         formCad.classList.replace('d-flex', 'd-none')
     }, 1400);
     setTimeout(() => {
         formLogin.classList.replace('d-none', 'd-flex')
-        mainForm.style.height = ''
+        mainForm.style.height = '558px'
     }, 1500);
     formLogin.classList.replace('close-form', 'show-form')
 }
