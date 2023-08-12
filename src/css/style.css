@@ -191,6 +191,11 @@ footer {
 .card{
     background: #C5F1FF;
 }
+/* Pág view imagem */
+#view-img {
+    height: 559px;
+}
+
 .ad-container {
     display: flex;
     align-items: center; /* Alinhar verticalmente no centro */
