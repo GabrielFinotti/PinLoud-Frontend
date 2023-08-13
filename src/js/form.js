@@ -14,7 +14,7 @@ function switchFormCad() {
     formLogin.classList.replace('show-form', 'close-form')
     setTimeout(() => {
         formLogin.classList.replace('d-flex', 'd-none')
-        mainForm.style.height = '558px'
+        mainForm.style.height = '645px'
     }, 1400);
     setTimeout(() => {
         formCad.classList.replace('d-none', 'd-flex')
@@ -29,7 +29,7 @@ function switchFormLogin() {
     }, 1400);
     setTimeout(() => {
         formLogin.classList.replace('d-none', 'd-flex')
-        mainForm.style.height = '558px'
+        mainForm.style.height = '645px'
     }, 1500);
     formLogin.classList.replace('close-form', 'show-form')
 }
