@@ -16,7 +16,7 @@ import {
 export class FormCadastroComponent {
   // Variáveis do componente.
   protected formCadastro!: FormGroup;
-  
+
 
   constructor(private formBuilder: FormBuilder) {
     // Contrução do formulário e suas validações.
@@ -42,6 +42,6 @@ export class FormCadastroComponent {
     });
   }
 
-  // Método de envio do formulário de cadastro
+  // Método de envio do formulário de cadastro.
   protected submitCadastro() {}
 }

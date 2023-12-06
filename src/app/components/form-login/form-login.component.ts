@@ -14,19 +14,20 @@ import {
   styleUrl: './form-login.component.scss',
 })
 export class FormLoginComponent {
-  //Variáveis do Componente
+  //Variáveis do Componente.
   protected formLogin!: FormGroup;
   protected typeInput!: string;
 
   constructor(private formBuilder: FormBuilder) {
-    // Construindo o formulário de login
+    // Construindo o formulário de login.
     this.formLogin = this.formBuilder.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
 
     this.typeInput = 'password';
   }
 
+  // Método de envio do formulário de login.
   protected submitLogin() {}
 }

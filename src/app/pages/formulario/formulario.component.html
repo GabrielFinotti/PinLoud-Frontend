@@ -1,10 +1,12 @@
+<app-nav-bar></app-nav-bar>
 <main>
   <!--
     Troca dos formulários
   -->
-  @if (!formLogin) {
+  @if (formLogin) {
   <app-form-login></app-form-login>
   } @else {
   <app-form-cadastro></app-form-cadastro>
   }
 </main>
+<app-footer></app-footer>
