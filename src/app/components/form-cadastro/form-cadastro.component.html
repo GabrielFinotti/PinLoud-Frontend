@@ -1,1 +1,12 @@
-<p>form-cadastro works!</p>
+<form [formGroup]="formCadastro" (ngSubmit)="submitCadastro()">
+  <h1>Cadastro</h1>
+  <input type="text" placeholder="Usuário" formControlName="username" />
+  <input type="email" placeholder="E-mail" formControlName="email" />
+  <input type="password" placeholder="Senha" formControlName="password" />
+  <input
+    type="password"
+    placeholder="Confirme sua Senha"
+    formControlName="confPassword"
+  />
+  <input type="submit" value="Cadastrar" [disabled]="formCadastro.invalid" />
+</form>
