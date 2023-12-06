@@ -25,4 +25,12 @@ export class FormularioComponent {
   constructor() {
     this.formLogin = true;
   }
+
+  public toggleForm() {
+    if (this.formLogin) {
+      this.formLogin = false;
+    } else {
+      this.formLogin = true;
+    }
+  }
 }
