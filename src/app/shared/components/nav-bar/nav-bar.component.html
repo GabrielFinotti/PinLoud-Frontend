@@ -1,1 +1,42 @@
-<p>nav-bar works!</p>
+<header>
+  <nav>
+    <!--
+      Botão para abrir menu de navegação
+     -->
+    <button type="menu" (click)="showMenu()">
+      <img src="../../../../assets/icons/menu.svg" alt="Menu" />
+    </button>
+    <!--
+      Logo
+     -->
+    <div id="logo">
+      <img src="../../../../assets/imgs/logo.svg" alt="Logo" />
+      <span [hidden]="true">Pinloud</span>
+    </div>
+    <!--
+      Navegação
+     -->
+    <div [hidden]="!navItens" id="navItens">
+      <div id="listNav">
+        <!--
+          Botão para fechar o menu de navegação
+         -->
+        <button type="menu" (click)="showMenu()">
+          <img src="../../../../assets/icons/close.svg" alt="Close" />
+        </button>
+        <a routerLink="/" routerLinkActive="active">Home</a>
+        <a routerLink="/explorar" routerLinkActive="active">Explorar</a>
+        <a routerLink="/criar" routerLinkActive="active">Criar</a>
+      </div>
+    </div>
+    <!--
+      Aréa de conta
+     -->
+    <div id="acount">
+      <span [hidden]="true">Conta</span>
+      <a [routerLink]="['/usuario', 'formulario']">
+        <img src="../../../../assets/icons/acount.svg" alt="Conta" />
+      </a>
+    </div>
+  </nav>
+</header>

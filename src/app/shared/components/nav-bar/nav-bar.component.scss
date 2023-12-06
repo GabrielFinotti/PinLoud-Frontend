@@ -1,0 +1,95 @@
+// Importações
+@import "../../../../scss/rem-cal.scss";
+
+@import "../../../../scss/variables.scss";
+
+// Formtações
+header {
+  background: $secondary-bg-color;
+
+  position: relative;
+
+  padding: rem-cal(5) rem-cal(10);
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      background: none;
+      border: 0;
+
+      img {
+        width: rem-cal(40);
+      }
+    }
+
+    #logo {
+      img {
+        @media (max-width: 426px) {
+          width: rem-cal(75);
+        }
+      }
+    }
+
+    #navItens {
+      @media (max-width: 426px) {
+        background-color: rgba($color: #000000, $alpha: 0.7);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+      }
+
+      #listNav {
+        display: flex;
+
+        @media (max-width: 426px) {
+          background: $secondary-bg-color;
+
+          flex-direction: column;
+          align-items: start;
+
+          width: 60%;
+          height: 100vh;
+          padding: rem-cal(5) 0;
+        }
+
+        button {
+          padding-top: rem-cal(5);
+          padding-left: rem-cal(5);
+        }
+
+        a {
+          color: $primary-text-color;
+          font-size: rem-cal(20);
+          text-decoration: none;
+
+          &.active {
+            border-bottom: 2px solid $primary-text-color;
+          }
+
+          @media (max-width: 426px) {
+            border-bottom: 2px solid $primary-text-color;
+
+            text-indent: rem-cal(5);
+
+            width: 100%;
+            padding-top: rem-cal(20);
+          }
+        }
+      }
+    }
+
+    #acount {
+      img {
+        @media (max-width: 426px) {
+          width: rem-cal(40);
+        }
+      }
+    }
+  }
+}
