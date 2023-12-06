@@ -1,0 +1,9 @@
+<h1>Login</h1>
+<form [formGroup]="formLogin" (ngSubmit)="submitLogin()">
+  <input type="email" placeholder="E-mail" formControlName="email" />
+  <div>
+    <input [type]="" placeholder="Senha" formControlName="password" />
+    <a>Esqueci a senha</a>
+  </div>
+  <input type="submit" value="Entrar" [disabled]="formLogin.invalid" />
+</form>
