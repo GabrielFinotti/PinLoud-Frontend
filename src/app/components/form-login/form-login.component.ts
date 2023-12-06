@@ -16,6 +16,7 @@ import {
 export class FormLoginComponent {
   //Variáveis do Componente
   protected formLogin!: FormGroup;
+  protected typeInput!: string;
 
   constructor(private formBuilder: FormBuilder) {
     // Construindo o formulário de login
@@ -23,6 +24,8 @@ export class FormLoginComponent {
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
+
+    this.typeInput = 'password';
   }
 
   protected submitLogin() {}

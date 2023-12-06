@@ -1,0 +1,60 @@
+// Importações
+@import "../../../scss/rem-cal.scss";
+
+@import "../../../scss/variables.scss";
+
+// Formatações
+form {
+  display: flex;
+  flex-direction: column;
+
+  max-width: rem-cal(340);
+  margin: auto;
+
+  h1 {
+    color: $primary-text-color;
+    font-size: rem-cal(36);
+    text-align: center;
+  }
+
+  input {
+    border: 1px solid #000;
+    border-radius: rem-cal(50);
+
+    color: $primary-text-color;
+    font-size: rem-cal(18);
+
+    height: rem-cal(40);
+    margin-top: rem-cal(24);
+    padding-left: rem-cal(12);
+
+    &::placeholder {
+      color: $primary-text-color;
+    }
+
+    &:focus {
+      outline-color: #000;
+    }
+
+    &[type="submit"] {
+      background: $primary-btn-color;
+      border: 0;
+      border-radius: rem-cal(15);
+
+      color: #fff;
+      font-size: rem-cal(20);
+
+      width: 34%;
+      height: auto;
+      margin: rem-cal(30) auto;
+      padding: rem-cal(8) 0;
+
+      cursor: pointer;
+    }
+  }
+
+  p {
+    margin-top: rem-cal(4);
+    margin-left: rem-cal(12);
+  }
+}
