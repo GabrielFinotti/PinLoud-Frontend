@@ -11,12 +11,12 @@
      -->
     <div id="logo">
       <img src="../../../../assets/imgs/logo.svg" alt="Logo" />
-      <span [hidden]="true">Pinloud</span>
+      <span>Pinloud</span>
     </div>
     <!--
       Navegação
      -->
-    <div [hidden]="!navItens" id="navItens">
+    <div [ngStyle]="display" id="navItens">
       <div id="listNav">
         <!--
           Botão para fechar o menu de navegação
@@ -24,7 +24,12 @@
         <button type="menu" (click)="showMenu()">
           <img src="../../../../assets/icons/close.svg" alt="Close" />
         </button>
-        <a routerLink="/" routerLinkActive="active">Home</a>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
         <a routerLink="/explorar" routerLinkActive="active">Explorar</a>
         <a routerLink="/criar" routerLinkActive="active">Criar</a>
       </div>
@@ -33,7 +38,7 @@
       Aréa de conta
      -->
     <div id="acount">
-      <span [hidden]="true">Conta</span>
+      <span>Conta</span>
       <a [routerLink]="['/usuario', 'formulario']">
         <img src="../../../../assets/icons/acount.svg" alt="Conta" />
       </a>
