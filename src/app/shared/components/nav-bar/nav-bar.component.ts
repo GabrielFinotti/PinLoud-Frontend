@@ -28,7 +28,7 @@ export class NavBarComponent {
     } else {
       this.navItens = true;
       this.display = {
-        display: 'block'
+        display: 'block',
       };
     }
   }

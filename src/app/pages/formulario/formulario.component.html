@@ -9,9 +9,11 @@
   <app-form-cadastro></app-form-cadastro>
   }
   <p>
-    {{formLogin ? 'Não tem uma conta?' : 'Ja tem uma conta?'}}
-    <br>
-    <span (click)="toggleForm()">{{formLogin ? 'Cadastre-se' : 'Entre aqui'}}</span>
+    {{ formLogin ? "Não tem uma conta?" : "Ja tem uma conta?" }}
+    <br />
+    <span (click)="toggleForm()">{{
+      formLogin ? "Cadastre-se" : "Entre aqui"
+    }}</span>
   </p>
 </main>
 <app-footer></app-footer>

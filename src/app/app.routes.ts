@@ -14,7 +14,6 @@ export const routes: Routes = [
   { path: 'criar', component: CriarComponent },
   {
     path: 'usuario',
-    component: UserComponent,
     children: [{ path: 'formulario', component: FormularioComponent }],
   },
   { path: '**', component: NotFoundComponent },
