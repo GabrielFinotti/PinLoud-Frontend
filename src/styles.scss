@@ -1,8 +1,4 @@
 // Importações
-@import "scss/rem-cal.scss";
-
-@import "scss/variables.scss";
-
 @font-face {
   font-family: Kalam;
   src: url(assets/fonts/Kalam/Kalam-Light.woff);
@@ -24,16 +20,11 @@
   font-style: normal;
 }
 
-// Reset
+// Formatação
 * {
   font-family: kalam;
 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-// Formtações
-main {
-  background: $primary-bg-color;
 }
