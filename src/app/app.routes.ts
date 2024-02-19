@@ -1,3 +1,21 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { PinsComponent } from './pages/pins/pins.component';
+import { PinCreateComponent } from './pages/pin-create/pin-create.component';
+import { AccountComponent } from './pages/account/account.component';
+import { FormComponent } from './pages/form/form.component';
+import { UserComponent } from './pages/user/user.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'pins', component: PinsComponent },
+  { path: 'create', component: PinCreateComponent },
+  {
+    path: 'account',
+    component: AccountComponent,
+    children: [
+      { path: 'form', component: FormComponent },
+      { path: 'user', component: UserComponent },
+    ],
+  },
+];
