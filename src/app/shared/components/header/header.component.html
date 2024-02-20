@@ -1,5 +1,5 @@
 <nav class="navbar">
-  <div class="container">
+  <div class="container" data-bs-theme="dark">
     <button
       type="menu"
       class="navbar-toggler"
@@ -17,7 +17,7 @@
     tabindex="-1"
     id="offcanvasNavBar"
   >
-    <div class="offcanvas-header">
+    <div class="offcanvas-header" data-bs-theme="dark">
       <button
         type="menu"
         class="btn-close"
@@ -25,10 +25,10 @@
       ></button>
     </div>
     <div class="offcanvas-body">
-      <a class="nav-link" routerLink="">Home</a>
-      <a class="nav-link" routerLink="/pins">Explorar</a>
-      <a class="nav-link" routerLink="/create">Criar</a>
-      <a class="nav-link" [routerLink]="['/account']">Conta</a>
+      <a class="nav-link link-light fs-5" routerLink="">Home</a>
+      <a class="nav-link link-light fs-5" routerLink="/pins">Explorar</a>
+      <a class="nav-link link-light fs-5" routerLink="/create">Criar</a>
+      <a class="nav-link link-light fs-5" [routerLink]="['/account']">Conta</a>
     </div>
   </div>
 </nav>
