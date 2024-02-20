@@ -1,1 +1,34 @@
-<p>header works!</p>
+<nav class="navbar">
+  <div class="container">
+    <button
+      type="menu"
+      class="navbar-toggler"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavBar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand">
+      <img src="" alt="Logo" />
+    </a>
+  </div>
+  <div
+    class="offcanvas offcanvas-start w-75"
+    tabindex="-1"
+    id="offcanvasNavBar"
+  >
+    <div class="offcanvas-header">
+      <button
+        type="menu"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <a class="nav-link" routerLink="">Home</a>
+      <a class="nav-link" routerLink="/pins">Explorar</a>
+      <a class="nav-link" routerLink="/create">Criar</a>
+      <a class="nav-link" [routerLink]="['/account']">Conta</a>
+    </div>
+  </div>
+</nav>

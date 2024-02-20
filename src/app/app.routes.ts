@@ -5,6 +5,7 @@ import { PinCreateComponent } from './pages/pin-create/pin-create.component';
 import { AccountComponent } from './pages/account/account.component';
 import { FormComponent } from './pages/form/form.component';
 import { UserComponent } from './pages/user/user.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -15,7 +16,8 @@ export const routes: Routes = [
     component: AccountComponent,
     children: [
       { path: 'form', component: FormComponent },
-      { path: 'user', component: UserComponent },
+      { path: 'user/:id', component: UserComponent },
     ],
   },
+  { path: '**', component: NotFoundComponent },
 ];
