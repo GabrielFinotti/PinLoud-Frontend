@@ -1,11 +1,10 @@
 @import "../../../../scss/index.scss";
 
-nav {
+header {
   background: $secondary-bg-color;
-
-  .offcanvas {
-    background: $secondary-bg-color;
-
-    max-width: 350px;
+  nav {
+    .offcanvas {
+      background: $secondary-bg-color;
+    }
   }
 }
