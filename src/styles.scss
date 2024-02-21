@@ -2,29 +2,32 @@
 @import "scss/index.scss";
 
 @font-face {
-  font-family: Kalam;
-  src: url(assets/fonts/Kalam/Kalam-Light.woff);
-  font-weight: lighter;
-  font-style: normal;
+  font-family: Roboto;
+  src: url(assets/fonts/Roboto-Light.woff);
+  font-weight: 300;
 }
 
 @font-face {
-  font-family: Kalam;
-  src: url(assets/fonts/Kalam/Kalam-Regular.woff);
+  font-family: Roboto;
+  src: url(assets/fonts/Roboto-Regular.woff);
   font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: kalam;
-  src: url(assets/fonts/Kalam/Kalam-Bold.woff);
+  font-family: Roboto;
+  src: url(assets/fonts/Roboto-Medium.woff);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(assets/fonts/Roboto-Bold.woff);
   font-weight: bold;
-  font-style: normal;
 }
 
 // Formatação
 * {
-  font-family: kalam;
+  font-family: Roboto;
 
   margin: 0;
   padding: 0;

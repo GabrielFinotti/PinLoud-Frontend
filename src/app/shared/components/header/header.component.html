@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar navbar-expand-lg">
   <div class="container" data-bs-theme="dark">
     <button
       type="menu"
@@ -9,7 +9,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" routerLink="">
-      <img src="" alt="Logo" />
+      <img src="../../../../assets/imgs/Logo.png" alt="Logo" />
     </a>
   </div>
   <div
@@ -24,8 +24,8 @@
         data-bs-dismiss="offcanvas"
       ></button>
     </div>
-    <div class="offcanvas-body">
-      <a class="nav-link link-light fs-5" routerLink="">Home</a>
+    <div class="offcanvas-body navbar-nav">
+      <a class="nav-link link-light fs-5" routerLink="">Início</a>
       <a class="nav-link link-light fs-5" routerLink="/pins">Explorar</a>
       <a class="nav-link link-light fs-5" routerLink="/create">Criar</a>
       <a class="nav-link link-light fs-5" [routerLink]="['/account']">Conta</a>
