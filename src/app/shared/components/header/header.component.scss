@@ -2,9 +2,24 @@
 
 header {
   background: $secondary-bg-color;
+  
   nav {
     .offcanvas {
       background: $secondary-bg-color;
     }
+
+    a {
+      font-size: rem-cal(20);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #account {
+    background: $primary-bg-color;
+    border-radius: 0 15px 0 15px;
+
+    color: $secondary-text-color !important;
+    font-weight: bold;
   }
 }

@@ -25,12 +25,15 @@
           data-bs-dismiss="offcanvas"
         ></button>
       </div>
-      <div class="offcanvas-body navbar-nav">
-        <a class="nav-link link-light fs-5" routerLink="">Início</a>
-        <a class="nav-link link-light fs-5" routerLink="/pins">Explorar</a>
-        <a class="nav-link link-light fs-5" routerLink="/create">Criar</a>
-        <a class="nav-link link-light fs-5" [routerLink]="['/account']"
-          >Conta</a
+      <div class="offcanvas-body navbar-nav gap-2">
+        <a class="nav-link link-light" routerLink="">Início</a>
+        <a class="nav-link link-light" routerLink="/pins">Explorar</a>
+        <a class="nav-link link-light" routerLink="/create">Criar</a>
+        <a
+          id="account"
+          class="nav-link link-light text-nowrap"
+          [routerLink]="['/account']"
+          >Entre ou Cadastre-se</a
         >
       </div>
     </div>
