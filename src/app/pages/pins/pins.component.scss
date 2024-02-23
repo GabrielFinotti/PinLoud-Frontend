@@ -2,10 +2,31 @@
 
 main {
   min-height: calc(100vh - 161px);
+
+  padding-top: 35px;
+
+  #searchPin {
+    margin-bottom: 50px;
+  }
+
+  #pins {
+    column-count: 2;
+    column-gap: 10px;
+
+    img {
+      width: 100%;
+
+      margin-bottom: 10px;
+    }
+  }
 }
 
 @media (min-width: 768px) {
   main {
     min-height: calc(100vh - 137px);
+
+    #pins {
+      column-count: 4;
+    }
   }
 }
