@@ -1,0 +1,44 @@
+@import "../../../scss/index.scss";
+
+#searchPin {
+  #searchGroup {
+    border: 1px solid;
+    border-radius: 50px;
+
+    display: flex;
+
+    padding: 5px;
+
+    input {
+      background: none;
+      border: none;
+
+      font-size: rem-cal(16);
+      font-weight: normal;
+      text-indent: 10px;
+
+      width: calc(100% - 30px);
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-weight: 300;
+      }
+
+      &::-webkit-search-cancel-button {
+        display: none;
+      }
+    }
+
+    button {
+      background: none;
+      border: none;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+}
