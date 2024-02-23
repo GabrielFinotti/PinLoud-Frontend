@@ -3,10 +3,10 @@
 main {
   min-height: calc(100vh - 161px);
 
-  padding-top: 35px;
+  padding-top: 40px;
 
   #searchPin {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   #pins {
@@ -14,8 +14,9 @@ main {
     column-gap: 10px;
 
     img {
-      width: 100%;
+      border-radius: 10px;
 
+      width: 100%;
       margin-bottom: 10px;
     }
   }
