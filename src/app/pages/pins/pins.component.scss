@@ -20,6 +20,13 @@ main {
 
       width: 100%;
       margin-bottom: 10px;
+
+      transition: 500ms ease-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }

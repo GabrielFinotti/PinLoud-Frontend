@@ -26,13 +26,30 @@
         ></button>
       </div>
       <div class="offcanvas-body navbar-nav gap-2">
-        <a class="nav-link link-light" routerLink="">Início</a>
-        <a class="nav-link link-light" routerLink="/pins">Explorar</a>
-        <a class="nav-link link-light" routerLink="/create">Criar</a>
+        <a
+          class="nav-link link-light"
+          routerLink=""
+          routerLinkActive="link-actived"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Início</a
+        >
+        <a
+          class="nav-link link-light"
+          routerLink="/pins"
+          routerLinkActive="link-actived"
+          >Explorar</a
+        >
+        <a
+          class="nav-link link-light"
+          routerLink="/create"
+          routerLinkActive="link-actived"
+          >Criar</a
+        >
         <a
           id="account"
           class="nav-link link-light text-nowrap"
           [routerLink]="['/account/form']"
+          routerLinkActive="link-actived"
           >Entre ou Cadastre-se</a
         >
       </div>

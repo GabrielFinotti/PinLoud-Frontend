@@ -10,7 +10,15 @@ header {
 
     a {
       font-size: rem-cal(20);
+
+      &:hover {
+        color: #000000 !important;
+      }
     }
+  }
+
+  .link-actived {
+    color: #000000 !important;
   }
 }
 
@@ -21,5 +29,17 @@ header {
 
     color: $secondary-text-color !important;
     font-weight: bold;
+
+    &:hover {
+      background-color: #000000;
+
+      color: $primary-text-color !important;
+    }
+
+    &.link-actived {
+      background-color: #000000;
+
+      color: $primary-text-color !important;
+    }
   }
 }
