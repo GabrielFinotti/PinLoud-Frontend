@@ -1,16 +1,20 @@
 @import "../../../scss/index.scss";
 
 main {
+  background-image: url(../../../assets/imgs/background-home.png);
+  background-position: center;
+  background-size: cover;
+
   min-height: calc(100vh - 161px);
 
   #searchPin {
     #searchGroup {
-      border: 1px solid;
+      backdrop-filter: blur(3px);
       border-radius: 50px;
 
       display: flex;
 
-      padding: 5px;
+      padding: 10px;
 
       input {
         background: none;

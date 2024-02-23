@@ -1,8 +1,8 @@
 <app-header></app-header>
-<main class="container d-flex justify-content-center align-items-center">
-  <section id="searchPin" class="w-100">
-    <form [formGroup]="pinSearch" (ngSubmit)="getPin()">
-      <div id="searchGroup">
+<main class="d-flex align-items-center">
+  <section id="searchPin" class="container">
+    <form [formGroup]="pinSearch" (ngSubmit)="getPin()" class="w-100">
+      <div id="searchGroup" class="bg-white bg-opacity-50">
         <input
           type="search"
           placeholder="No que está pensando hoje?"
@@ -11,7 +11,7 @@
         <button type="submit">
           <img
             id="searchImage"
-            src="../../../assets/imgs/search-icon.png"
+            src="../../../assets/icons/search-icon.png"
             alt="Pesquisar"
           />
         </button>
