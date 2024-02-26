@@ -1,41 +1,48 @@
 <h1 class="text-center fw-bold mb-4">Enviar Imagem</h1>
-<form>
-  <div class="mb-4">
-    <label class="d-block w-50 m-auto text-center fs-5 pt-1 pb-1" for="file"
-      >Uploud</label
-    >
+<form class="d-lg-flex justify-content-lg-between">
+  <section id="imgFile">
+    <div class="mb-4">
+      <label
+        class="d-block w-50 m-auto mb-4 text-center fs-5 pt-1 pb-1"
+        for="file"
+        >Uploud</label
+      >
+      <input
+        id="file"
+        class="d-none"
+        type="file"
+        (change)="showImagePreview($event)"
+      />
+      <img class="w-100" [src]="imgPreview" />
+      @if (!imgPreview) {
+      <p class="text-center">Adicione uma imagem para visualizar!</p>
+      }
+    </div>
+  </section>
+  <section id="inputGroup">
+    <div class="mb-4">
+      <h2 class="mb-3">Título</h2>
+      <input class="w-100" type="text" placeholder="Use a criatividade" />
+    </div>
+    <div class="mb-4">
+      <h2 class="mb-3">Descrição</h2>
+      <textarea
+        class="w-100"
+        placeholder="O que sua imagem signifca?"
+      ></textarea>
+    </div>
+    <div class="mb-4">
+      <h2 class="mb-3">Tags</h2>
+      <input
+        class="w-100"
+        type="text"
+        placeholder="Torne sua imagem mais fácil de encontrar"
+      />
+    </div>
     <input
-      id="file"
-      class="d-none"
-      type="file"
-      (change)="showImagePreview($event)"
+      class="border-0 d-block m-auto pt-2 pb-2 h4 fs-4"
+      type="submit"
+      value="Criar"
     />
-  </div>
-  <div id="imgPreview" class="mb-4">
-    <img class="w-100" [src]="imgPreview" />
-    @if (!imgPreview) {
-    <p class="text-center">Adicione uma imagem para visualizar!</p>
-    }
-  </div>
-  <div class="mb-4">
-    <h2 class="mb-3">Título</h2>
-    <input class="w-100" type="text" placeholder="Use a criatividade" />
-  </div>
-  <div class="mb-4">
-    <h2 class="mb-3">Descrição</h2>
-    <textarea class="w-100" placeholder="O que sua imagem signifca?"></textarea>
-  </div>
-  <div class="mb-4">
-    <h2 class="mb-3">Tags</h2>
-    <input
-      class="w-100"
-      type="text"
-      placeholder="Torne sua imagem mais fácil de encontrar"
-    />
-  </div>
-  <input
-    class="border-0 d-block m-auto pt-2 pb-2 h4 fs-4"
-    type="submit"
-    value="Criar"
-  />
+  </section>
 </form>

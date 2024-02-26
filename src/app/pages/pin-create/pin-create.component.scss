@@ -1,6 +1,13 @@
 @import "../../../scss/index.scss";
 
 main {
+  min-height: calc(100vh - 161px);
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  main {
+    min-height: calc(100vh - 137px);
+  }
 }

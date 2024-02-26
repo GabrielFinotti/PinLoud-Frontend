@@ -6,52 +6,66 @@ h2 {
 }
 
 form {
-  div {
-    input,
-    textarea {
-      background: none;
-      border: 0;
-      border-bottom: 2px solid rgba(#808080, 0.5);
-      border-right: 4px solid rgba(#808080, 0.5);
-      border-radius: 20px;
-
-      font-size: rem-cal(16);
-      font-weight: normal;
-      text-indent: 10px;
-
-      padding: 10px;
-
-      &:focus {
-        outline: none;
-      }
-
-      &::placeholder {
-        font-weight: 300;
-      }
-    }
-
-    textarea {
-      height: 208px;
-      resize: none;
-    }
-
+  #imgFile {
     label {
       background-color: $secondary-bg-color;
       border-radius: 10px;
 
       color: $primary-text-color;
 
-      max-width: 390px;
+      cursor: pointer;
     }
   }
 
-  input[type="submit"] {
-    background-color: $primary-btn-color;
-    border-radius: 15px;
+  #inputGroup {
+    div {
+      input,
+      textarea {
+        background: none;
+        border: 0;
+        border-bottom: 2px solid rgba(#808080, 0.5);
+        border-right: 4px solid rgba(#808080, 0.5);
+        border-radius: 20px;
 
-    color: $primary-text-color;
+        font-size: rem-cal(16);
+        font-weight: normal;
+        text-indent: 10px;
 
-    width: 35%;
-    max-width: 280px;
+        padding: 10px;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          font-weight: 300;
+        }
+      }
+
+      textarea {
+        height: 208px;
+        resize: none;
+      }
+    }
+
+    input[type="submit"] {
+      background-color: $primary-btn-color;
+      border-radius: 15px;
+
+      color: $primary-text-color;
+
+      width: 35%;
+      max-width: 280px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #imgFile {
+    width: 40%;
+  }
+
+  #inputGroup {
+    width: 55%;
   }
 }
