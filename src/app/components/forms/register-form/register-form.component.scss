@@ -1,0 +1,48 @@
+@import "../../../../scss/index.scss";
+
+form {
+  border-radius: 50px;
+
+  width: 100vw;
+  max-width: 750px;
+
+  h1,
+  h2 {
+    color: $tertiary-text-color;
+  }
+
+  div {
+    input {
+      background: none;
+      border: 0;
+      border-bottom: 2px solid rgba(#808080, 0.5);
+      border-right: 4px solid rgba(#808080, 0.5);
+      border-radius: 20px;
+
+      font-size: rem-cal(16);
+      font-weight: normal;
+      text-indent: 10px;
+
+      padding: 10px;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-weight: 300;
+      }
+    }
+  }
+
+  input[type="submit"] {
+    background-color: $primary-btn-color;
+    border-radius: 15px;
+
+    color: $primary-text-color;
+
+    width: 40%;
+    min-width: 180px;
+    max-width: 280px;
+  }
+}
