@@ -15,7 +15,12 @@
       />
       <img class="w-100" [src]="imgPreview" />
       @if (!imgPreview) {
-      <p class="text-center">Adicione uma imagem para visualizar!</p>
+      <div
+        id="imgOff"
+        class="w-100 d-flex justify-content-center align-items-center"
+      >
+        <p class="text-black fw-medium">Insira uma imagem para visualizar!</p>
+      </div>
       }
     </div>
   </section>
