@@ -1,11 +1,20 @@
 @import "../../../scss/index.scss";
 
 main {
-  p {
-    color: $secondary-text-color;
+  background-image: url(../../../assets/imgs/Background-form.png);
+  background-position: center;
+  background-size: cover;
 
-    span {
-      cursor: pointer;
+  section {
+    background-color: $primary-bg-color;
+    border-radius: 50px;
+
+    p {
+      color: $secondary-text-color;
+
+      span {
+        cursor: pointer;
+      }
     }
   }
 }
