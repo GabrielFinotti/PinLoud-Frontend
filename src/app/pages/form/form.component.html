@@ -1,4 +1,14 @@
-<main class="d-flex justify-content-center align-items-center">
+<main class="d-flex flex-column justify-content-center align-items-center">
+  @if (FormToggle) {
   <app-login-form></app-login-form>
+  } @else {
+  <app-register-form></app-register-form>
+  }
+  <p>
+    {{ FormToggle ? "Ainda não tem conta?" : "Ja tem uma conta?" }}
+    <span class="fw-bold" (click)="onToggleForm()">{{
+      FormToggle ? "Cadastre-se aqui!" : "Entre aqui!"
+    }}</span>
+  </p>
 </main>
 <app-footer></app-footer>

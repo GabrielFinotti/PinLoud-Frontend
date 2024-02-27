@@ -16,4 +16,18 @@ import { LoginFormComponent } from '../../components/forms/login-form/login-form
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
 })
-export class FormComponent {}
+export class FormComponent {
+  public FormToggle!: boolean;
+
+  constructor() {
+    this.FormToggle = true;
+  }
+
+  public onToggleForm() {
+    if (this.FormToggle) {
+      this.FormToggle = false;
+    } else {
+      this.FormToggle = true;
+    }
+  }
+}

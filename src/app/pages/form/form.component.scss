@@ -1,1 +1,11 @@
 @import "../../../scss/index.scss";
+
+main {
+  p {
+    color: $secondary-text-color;
+
+    span {
+      cursor: pointer;
+    }
+  }
+}
