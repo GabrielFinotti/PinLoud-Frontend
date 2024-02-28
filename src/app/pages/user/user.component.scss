@@ -1,0 +1,19 @@
+@import "../../../scss/index.scss";
+
+main {
+  #userData {
+  }
+
+  #userPins {
+    column-count: 2;
+    column-gap: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    #userPins {
+      column-count: 4;
+    }
+  }
+}

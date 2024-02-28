@@ -24,6 +24,9 @@ form {
       padding: 10px;
 
       &:focus {
+        border-bottom: 2px solid $primary-btn-color;
+        border-right: 2px solid $primary-btn-color;
+
         outline: none;
       }
 

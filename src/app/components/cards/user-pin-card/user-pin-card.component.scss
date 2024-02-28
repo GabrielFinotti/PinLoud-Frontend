@@ -1,0 +1,33 @@
+@import "../../../../scss/index.scss";
+
+.img-card {
+  img {
+    border-radius: 10px;
+
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    background: none;
+    border: none;
+
+    &.edit {
+      left: 5px;
+      bottom: 8px;
+
+      img {
+        width: 30px;
+      }
+    }
+
+    &.delete {
+      right: 5px;
+      bottom: 8px;
+
+      img {
+        width: 22px;
+      }
+    }
+  }
+}

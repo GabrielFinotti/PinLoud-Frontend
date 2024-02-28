@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../shared/components/header/header.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { UserPinCardComponent } from '../../components/cards/user-pin-card/user-pin-card.component';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent],
+  imports: [FooterComponent, UserPinCardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss',
 })
