@@ -1,8 +1,22 @@
 @import "../../../../scss/index.scss";
 
+@keyframes showForm {
+  50% {
+    scale: 1.2;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
 form {
   width: 100vw;
   max-width: 750px;
+
+  scale: 0;
+
+  animation: showForm 800ms forwards ease;
 
   h1,
   h2 {
