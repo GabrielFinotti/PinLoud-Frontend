@@ -10,20 +10,6 @@ main {
   #pins {
     column-count: 2;
     column-gap: 10px;
-
-    img {
-      border-radius: 10px;
-
-      width: 100%;
-      margin-bottom: 10px;
-
-      transition: 500ms ease;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
   }
 }
 

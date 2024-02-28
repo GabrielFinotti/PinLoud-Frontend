@@ -1,0 +1,17 @@
+@import "../../../../scss/index.scss";
+
+div {
+  img {
+    border-radius: 10px;
+
+    width: 100%;
+    margin-bottom: 10px;
+
+    transition: 500ms ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
