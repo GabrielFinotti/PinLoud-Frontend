@@ -1,7 +1,33 @@
 @import "../../../scss/index.scss";
 
 main {
+  h4 {
+    color: $tertiary-text-color;
+  }
+
   #userData {
+    color: $secondary-text-color;
+
+    div {
+      img {
+        border: 4px solid $secondary-bg-color;
+        border-radius: 50px;
+
+        width: 100px;
+      }
+    }
+
+    #bio {
+      border-bottom: 1px solid rgba(#808080, 0.5);
+      border-right: 1px solid rgba(#808080, 0.5);
+      border-radius: 20px;
+
+      p {
+        text-align: justify;
+
+        max-height: 360px;
+      }
+    }
   }
 
   #userPins {
