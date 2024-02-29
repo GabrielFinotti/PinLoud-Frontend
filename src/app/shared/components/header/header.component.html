@@ -45,13 +45,28 @@
           routerLinkActive="link-actived"
           >Criar</a
         >
+        @if (!userLogin) {
         <a
           id="account"
           class="nav-link link-light text-nowrap"
-          [routerLink]="['/account/user', 1]"
+          [routerLink]="['/account/form']"
           routerLinkActive="link-actived"
           >Entre ou Cadastre-se</a
         >
+        } @else {
+        <a
+          class="d-flex gap-2 nav-link link-light text-nowrap"
+          [routerLink]="['/account/user', 1]"
+          routerLinkActive="link-actived"
+        >
+          <span>Usuário 1</span>
+          <img
+            class="d-none d-lg-block position-relative"
+            src="../../../../assets/icons/user-icon.svg"
+            alt=""
+          />
+        </a>
+        }
       </div>
     </div>
   </nav>

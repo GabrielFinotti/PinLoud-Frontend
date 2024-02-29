@@ -8,4 +8,10 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  protected userLogin!: boolean;
+
+  constructor() {
+    this.userLogin = true;
+  }
+}
