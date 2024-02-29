@@ -9,16 +9,8 @@ import { PinsViewComponent } from './pages/pins-view/pins-view.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  {
-    path: 'pins',
-    component: PinsComponent,
-    children: [
-      {
-        path: 'view/:id',
-        component: PinsViewComponent,
-      },
-    ],
-  },
+  { path: 'pins', component: PinsComponent },
+  { path: 'pins/view/:id', component: PinsViewComponent },
   { path: 'create', component: PinCreateComponent },
   {
     path: 'account',
