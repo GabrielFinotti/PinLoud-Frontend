@@ -39,3 +39,11 @@ div {
     }
   }
 }
+
+@media (min-width: 1024px) {
+  div {
+    #userData {
+      max-width: 380px;
+    }
+  }
+}
