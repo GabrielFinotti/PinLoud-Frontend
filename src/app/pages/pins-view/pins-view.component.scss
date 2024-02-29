@@ -1,0 +1,23 @@
+@import "../../../scss/index.scss";
+
+main {
+  h4 {
+    color: $tertiary-text-color;
+  }
+
+  #cardPreview {
+  }
+
+  #pinCard {
+    column-count: 2;
+    column-gap: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    #pinCard {
+      column-count: 4;
+    }
+  }
+}
