@@ -23,7 +23,7 @@ export class PinCardPreviewComponent implements OnChanges {
 
   private getDataPin(id: number) {
     this.pinsService.getPinAllData(id).subscribe(
-      (res) => ((this.pinData = res), console.log(this.pinData)),
+      (res) => (this.pinData = res),
       (err) => err
     );
   }

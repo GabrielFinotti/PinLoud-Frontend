@@ -1,7 +1,7 @@
 @if (pinData) {
 <div class="d-lg-flex gap-lg-4">
   <div id="imgData" class="mb-4 mb-lg-0">
-    <img class="w-100 mb-2" src="" alt="" />
+    <img class="w-100 mb-2" src="" [alt]="pinData.title" />
     <h1 class="fs-2 fw-bold mb-3">{{ pinData.title }}</h1>
     <h2 class="fs-4 fw-medium mb-4">{{ pinData.description }}</h2>
     <div class="d-flex flex-wrap gap-2">
@@ -12,8 +12,15 @@
   </div>
   <div class="w-100" id="userData">
     <div class="d-flex gap-3 align-items-center mb-4">
-      <img src="../../../../assets/icons/user-icon.svg" alt="" />
-      <p class="fs-4 m-0 fw-bold">Usuário 1</p>
+      <img
+        [src]="
+          pinData.user.profile_picture
+            ? pinData.user.profile_picture
+            : '../../../../assets/icons/user-icon.svg'
+        "
+        [alt]="pinData.user.username"
+      />
+      <p class="fs-4 m-0 fw-bold">{{ pinData.user.username }}</p>
     </div>
     <button class="d-block m-auto m-lg-0 p-2 w-100" type="button">
       <p class="fs-3 m-0">Baixar</p>
