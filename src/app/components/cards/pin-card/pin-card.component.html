@@ -1,5 +1,5 @@
 @for (pins of pinList; track $index) {
-<div>
+<div (click)="sendPinId(pins.id)">
   <img [src]="pins.image" [alt]="pins.title" />
 </div>
 }

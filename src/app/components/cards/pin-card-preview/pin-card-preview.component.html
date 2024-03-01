@@ -1,13 +1,14 @@
+@if (pinData) {
 <div class="d-lg-flex gap-lg-4">
   <div id="imgData" class="mb-4 mb-lg-0">
-    <img
-      class="w-100 mb-2"
-      src=""
-      alt=""
-    />
-    <h1 class="fs-3 fw-bold mb-3">Título</h1>
-    <h2 class="fs-4 fw-medium">Descrição</h2>
-    <p class="fs-5 fw-light">Tags</p>
+    <img class="w-100 mb-2" src="" alt="" />
+    <h1 class="fs-2 fw-bold mb-3">{{ pinData.title }}</h1>
+    <h2 class="fs-4 fw-medium mb-4">{{ pinData.description }}</h2>
+    <div class="d-flex flex-wrap gap-2">
+      @for (tag of pinData.ideas; track $index) {
+      <p class="fs-5 fw-light p-2">#{{ tag.title }}</p>
+      }
+    </div>
   </div>
   <div class="w-100" id="userData">
     <div class="d-flex gap-3 align-items-center mb-4">
@@ -19,3 +20,4 @@
     </button>
   </div>
 </div>
+}

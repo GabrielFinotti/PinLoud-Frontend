@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PinsService } from '../../../shared/services/pin/pins.service';
 import { PinList } from '../../../interfaces/pin-list';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pin-card',
@@ -12,7 +13,7 @@ import { PinList } from '../../../interfaces/pin-list';
 export class PinCardComponent implements OnInit {
   protected pinList!: PinList[];
 
-  constructor(private pinsService: PinsService) {}
+  constructor(private pinsService: PinsService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllPins();
@@ -22,11 +23,14 @@ export class PinCardComponent implements OnInit {
     this.pinsService.getPinsList().subscribe(
       (res) => {
         this.pinList = res;
-        console.log(this.pinList);
       },
       (err) => {
         console.error(err);
       }
     );
+  }
+
+  protected sendPinId(id: number) {
+    this.router.navigate(['pins/view/', id]);
   }
 }
