@@ -1,30 +1,5 @@
+@for (pins of pinList; track $index) {
 <div>
-  <img src="../../../assets/imgs/images.png" alt="" />
+  <img [src]="pins.image" [alt]="pins.title" />
 </div>
-<div>
-  <img src="../../../assets/imgs/background-home.png" alt="" />
-</div>
-<div>
-  <img src="../../../assets/imgs/dragão.png" alt="" />
-</div>
-<div>
-  <img
-    src="../../../assets/imgs/dragoes-qual-a-origem-do-mito-e-suas-variacoes-pelo-mundo-1.png"
-    alt=""
-  />
-</div>
-<div>
-  <img src="../../../assets/imgs/Ryūjin_Japanese-legends_Japan.png" alt="" />
-</div>
-<div>
-  <img
-    src="../../../assets/imgs/dragoes-qual-a-origem-do-mito-e-suas-variacoes-pelo-mundo-1.png"
-    alt=""
-  />
-</div>
-<div>
-  <img src="../../../assets/imgs/como-treinar-o-seu-dragao.png" alt="" />
-</div>
-<div>
-  <img src="../../../assets/imgs/a-casa-do-dragao-mais-dragoes.png" alt="" />
-</div>
+}
