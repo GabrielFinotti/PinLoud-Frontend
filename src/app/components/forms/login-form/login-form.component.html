@@ -1,19 +1,35 @@
-<form class="container m-auto p-5">
+<form
+  [formGroup]="loginForm"
+  class="container m-auto p-5"
+  (ngSubmit)="getUserLogin()"
+>
   <h1 class="text-center fw-bold mb-4 mb-md-5">Que bom ter você por aqui!</h1>
   <div class="mb-4">
     <h2>E-mail</h2>
-    <input class="w-100" type="email" placeholder="nome@gmail.com" />
+    <input
+      class="w-100"
+      type="email"
+      placeholder="nome@gmail.com"
+      formControlName="email"
+    />
   </div>
   <div class="mb-4">
     <h2>Senha</h2>
-    <input class="w-100" type="password" placeholder="Senha" />
+    <input
+      class="w-100"
+      type="password"
+      placeholder="Senha"
+      formControlName="password"
+    />
     <span class="d-block text-end text-decoration-underline mt-1"
       >Esqueci a senha</span
     >
   </div>
   <input
     class="border-0 d-block m-auto pt-2 pb-2 h4 fs-4"
+    [ngClass]="loginForm.invalid ? 'disabled' : ''"
     type="submit"
     value="Entrar"
+    [disabled]="loginForm.invalid"
   />
 </form>

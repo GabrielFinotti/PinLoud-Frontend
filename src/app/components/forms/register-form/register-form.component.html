@@ -1,26 +1,52 @@
-<form class="container m-auto p-5">
+<form
+  [formGroup]="registerForm"
+  class="container m-auto p-5"
+  (ngSubmit)="sendUserData()"
+>
   <h1 class="text-center fw-bold mb-4 mb-md-5">
     Vem se juntar a nossa comunidade!
   </h1>
   <div class="mb-4">
     <h2>Usuário</h2>
-    <input class="w-100" type="text" placeholder="Como você se chama?" />
+    <input
+      class="w-100"
+      type="text"
+      placeholder="Como você se chama?"
+      formControlName="username"
+    />
   </div>
   <div class="mb-4">
     <h2>E-mail</h2>
-    <input class="w-100" type="email" placeholder="nome@gmail.com" />
+    <input
+      class="w-100"
+      type="email"
+      placeholder="nome@gmail.com"
+      formControlName="email"
+    />
   </div>
   <div class="mb-4">
     <h2>Senha</h2>
-    <input class="w-100" type="password" placeholder="Senha" />
+    <input
+      class="w-100"
+      type="password"
+      placeholder="Senha"
+      formControlName="password"
+    />
   </div>
   <div class="mb-4">
     <h2>Confirme a Senha</h2>
-    <input class="w-100" type="password" placeholder="Confirmação de Senha" />
+    <input
+      class="w-100"
+      type="password"
+      placeholder="Confirmação de Senha"
+      formControlName="confPassword"
+    />
   </div>
   <input
     class="border-0 d-block m-auto pt-2 pb-2 h4 fs-4"
+    [ngClass]="registerForm.invalid ? 'disabled' : ''"
     type="submit"
     value="Registrar"
+    [disabled]="registerForm.invalid"
   />
 </form>

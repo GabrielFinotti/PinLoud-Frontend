@@ -11,7 +11,7 @@ export class PinsService {
   private url!: string;
 
   constructor(private http: HttpClient) {
-    this.url = 'http://127.0.0.1:8000/api/v1/pins';
+    this.url = 'http://localhost:8000/api/v1/pins';
   }
 
   public getPinsList(): Observable<PinList[]> {

@@ -2,6 +2,7 @@ export interface PinAllData {
   id: number;
   title: string;
   description: string;
+  image: string;
   user: {
     id: number;
     email: string;
@@ -12,8 +13,7 @@ export interface PinAllData {
     website: string | null;
     profile_picture: string | null;
   };
-  comments: any[];
-  likes: any[];
+  comments: string[];
   ideas: {
     id: number;
     title: string;
