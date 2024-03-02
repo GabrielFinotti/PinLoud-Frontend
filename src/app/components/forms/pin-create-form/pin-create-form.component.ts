@@ -13,7 +13,7 @@ export class PinCreateFormComponent {
 
   constructor(private ideasService: IdeasService) {}
 
-  private getAllIdeas() {
+  protected getAllIdeas() {
     const token: string = '';
 
     this.ideasService.getIdeas(token).subscribe(
