@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IdeasService } from '../../../shared/services/pin/ideas.service';
 
 @Component({
   selector: 'app-pin-create-form',
@@ -9,6 +10,17 @@ import { Component } from '@angular/core';
 })
 export class PinCreateFormComponent {
   public imgPreview!: string | ArrayBuffer;
+
+  constructor(private ideasService: IdeasService) {}
+
+  private getAllIdeas() {
+    const token: string = '';
+
+    this.ideasService.getIdeas(token).subscribe(
+      (res) => res,
+      (err) => console.error(err)
+    );
+  }
 
   public showImagePreview(event: Event) {
     const target = event.target as HTMLInputElement;
