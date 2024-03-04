@@ -55,6 +55,44 @@ form {
         height: 208px;
         resize: none;
       }
+
+      &#tags {
+        div {
+          background: none;
+          border: 0;
+          border-bottom: 2px solid $primary-btn-color;
+          border-right: 4px solid $primary-btn-color;
+          border-radius: 20px;
+
+          font-size: rem-cal(16);
+          font-weight: normal;
+
+          padding: 5px 10px 10px 20px;
+
+          span {
+            background-color: $primary-btn-color;
+            border-radius: 20px;
+
+            color: $primary-text-color;
+            font-size: rem-cal(18);
+
+            padding: 5px 10px;
+          }
+        }
+
+        ul {
+          padding-left: 20px !important;
+
+          li {
+            color: $tertiary-text-color;
+            font-size: rem-cal(18);
+
+            padding: 5px 10px;
+
+            cursor: pointer;
+          }
+        }
+      }
     }
 
     input[type="submit"] {

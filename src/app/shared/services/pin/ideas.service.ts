@@ -13,11 +13,11 @@ export class IdeasService {
     this.url = 'http://localhost:8000/api/v1/ideas';
   }
 
-  public getIdeas(token: string): Observable<Ideas> {
+  public getIdeas(token: string): Observable<Ideas[]> {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
 
-    return this.http.get<Ideas>(`${this.url}`, { headers });
+    return this.http.get<Ideas[]>(`${this.url}`, { headers });
   }
 }

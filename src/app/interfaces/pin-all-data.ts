@@ -15,10 +15,7 @@ export interface PinAllData {
   };
   comments: string[];
   ideas: {
-    id: number;
     title: string;
-    created_at: string;
-    user: number;
   }[];
   total_likes: number | null;
 }

@@ -3,7 +3,7 @@ export interface PinList {
   title: string;
   description: string;
   image: string;
-  ideas: number[];
+  ideas: string[];
   created_at: string;
   updated_at: string;
   user: {

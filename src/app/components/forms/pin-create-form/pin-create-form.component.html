@@ -37,13 +37,29 @@
         placeholder="O que sua imagem signifca?"
       ></textarea>
     </div>
-    <div class="mb-4">
+    <div id="tags" class="mb-4">
       <h2 class="mb-3">Tags</h2>
+      @if (selectedTag.length == 0) {
       <input
         class="w-100"
         type="text"
         placeholder="Torne sua imagem mais fácil de encontrar"
+        disabled
       />
+      } @else {
+      <div class="d-flex flex-wrap gap-2">
+        @for (selected of selectedTag; track $index) {
+        <span>#{{ selected }}</span>
+        }
+      </div>
+      }
+      <ul type="none" class="d-flex flex-wrap gap-3 p-0 mt-2">
+        @for (tag of tagName; track $index;) {
+        <li class="text-capitalize" (click)="selectTag($index)">
+          #{{ tag.title }}
+        </li>
+        }
+      </ul>
     </div>
     <input
       class="border-0 d-block m-auto pt-2 pb-2 h4 fs-4"
