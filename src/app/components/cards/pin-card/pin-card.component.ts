@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PinsService } from '../../../shared/services/pin/pins.service';
-import { PinList } from '../../../interfaces/pin-list';
+import { PinList } from '../../../interfaces/pins/pin-list';
 import { Router } from '@angular/router';
 
 @Component({

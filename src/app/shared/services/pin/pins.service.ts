@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PinList } from '../../../interfaces/pin-list';
-import { PinAllData } from '../../../interfaces/pin-all-data';
+import { PinList } from '../../../interfaces/pins/pin-list';
+import { PinAllData } from '../../../interfaces/pins/pin-all-data';
 
 @Injectable({
   providedIn: 'root',

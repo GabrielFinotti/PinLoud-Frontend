@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { UserLogin } from '../../../interfaces/user-login';
+import { UserLogin } from '../../../interfaces/user/user-login';
 import { UserService } from '../../../shared/services/user/user.service';
 
 @Component({

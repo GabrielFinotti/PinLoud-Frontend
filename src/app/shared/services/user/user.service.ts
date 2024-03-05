@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UserLogin } from '../../../interfaces/user-login';
-import { UserRegister } from '../../../interfaces/user-register';
+import { UserLogin } from '../../../interfaces/user/user-login';
+import { UserRegister } from '../../../interfaces/user/user-register';
 
 @Injectable({
   providedIn: 'root',

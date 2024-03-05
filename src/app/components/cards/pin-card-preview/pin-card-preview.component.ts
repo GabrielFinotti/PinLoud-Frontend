@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { PinsService } from '../../../shared/services/pin/pins.service';
-import { PinAllData } from '../../../interfaces/pin-all-data';
+import { PinAllData } from '../../../interfaces/pins/pin-all-data';
 
 @Component({
   selector: 'app-pin-card-preview',
