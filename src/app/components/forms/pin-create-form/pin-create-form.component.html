@@ -49,15 +49,21 @@
       } @else {
       <div class="d-flex flex-wrap gap-2">
         @for (selected of selectedTag; track $index) {
-        <span>#{{ selected }}</span>
+        <span class="text-capitalize">#{{ selected }}</span>
         }
       </div>
       }
       <ul type="none" class="d-flex flex-wrap gap-3 p-0 mt-2">
         @for (tag of tagName; track $index;) {
-        <li class="text-capitalize" (click)="selectTag($index)">
+        <li
+          class="text-capitalize"
+          [ngClass]="{ selected: tagSelectionStage[tag.title] }"
+          (click)="selectTag($index)"
+        >
           #{{ tag.title }}
         </li>
+        } @empty {
+        <li>Nenhuma tag encontrada</li>
         }
       </ul>
     </div>

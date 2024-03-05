@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { IdeasService } from '../../../shared/services/pin/ideas.service';
 import { Ideas } from '../../../interfaces/ideas';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-pin-create-form',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './pin-create-form.component.html',
   styleUrl: './pin-create-form.component.scss',
 })
@@ -13,9 +14,11 @@ export class PinCreateFormComponent implements OnInit {
   protected tagName!: Ideas[];
   protected selectedTag!: string[];
   public imgPreview!: string | ArrayBuffer;
+  public tagSelectionStage!: Record<string, boolean>;
 
   constructor(private ideasService: IdeasService) {
     this.selectedTag = [];
+    this.tagSelectionStage = {};
   }
 
   ngOnInit(): void {
@@ -24,7 +27,7 @@ export class PinCreateFormComponent implements OnInit {
 
   protected getAllIdeas() {
     const token: string =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwMTk5MTQxLCJpYXQiOjE3MDkzMzUxNDEsImp0aSI6IjAyZmM4ZGI1Y2U5YjQ0MjI5ZmVjYzc1YWMyMGE1ODlmIiwidXNlcl9pZCI6MX0.fLr5JsvE4Z5Nis_n_EPIHl-NBE3xwskch0RJBCVosVc';
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5NzQ5MDIxLCJpYXQiOjE3MDk2NjI2MjEsImp0aSI6IjMwNDk5MjU4YTVjMDQ1N2RhZmZkNGZiNWM4OTNmMWQ4IiwidXNlcl9pZCI6MX0.Ig6OCy55YxvB-s02WPNIw_JCbI-M5RIgxn1gUJO4Q8E';
 
     this.ideasService.getIdeas(token).subscribe(
       (res) => (this.tagName = res),
@@ -33,7 +36,17 @@ export class PinCreateFormComponent implements OnInit {
   }
 
   protected selectTag(index: number) {
-    this.selectedTag.push(this.tagName[index].title);
+    const selectTag = this.tagName[index].title;
+    const tagExists = this.selectedTag.includes(selectTag);
+
+    if (tagExists) {
+      const indexToRemove = this.selectedTag.indexOf(selectTag);
+      this.selectedTag.splice(indexToRemove, 1);
+      this.tagSelectionStage[selectTag] = false;
+    } else {
+      this.selectedTag.push(selectTag);
+      this.tagSelectionStage[selectTag] = true;
+    }
   }
 
   public showImagePreview(event: Event) {

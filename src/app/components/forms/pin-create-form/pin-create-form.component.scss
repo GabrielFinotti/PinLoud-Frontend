@@ -59,7 +59,6 @@ form {
       &#tags {
         div {
           background: none;
-          border: 0;
           border-bottom: 2px solid $primary-btn-color;
           border-right: 4px solid $primary-btn-color;
           border-radius: 20px;
@@ -67,7 +66,10 @@ form {
           font-size: rem-cal(16);
           font-weight: normal;
 
+          max-height: 300px;
           padding: 5px 10px 10px 20px;
+
+          overflow-y: auto;
 
           span {
             background-color: $primary-btn-color;
@@ -81,7 +83,10 @@ form {
         }
 
         ul {
+          max-height: 300px;
           padding-left: 20px !important;
+
+          overflow-y: auto;
 
           li {
             color: $tertiary-text-color;
@@ -90,6 +95,10 @@ form {
             padding: 5px 10px;
 
             cursor: pointer;
+
+            &.selected {
+              opacity: 0.2;
+            }
           }
         }
       }
