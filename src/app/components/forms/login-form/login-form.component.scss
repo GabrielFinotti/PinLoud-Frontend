@@ -38,7 +38,9 @@ form {
     span {
       color: $tertiary-text-color;
 
-      cursor: pointer;
+      opacity: 0.2;
+
+      cursor: not-allowed;
     }
   }
 
