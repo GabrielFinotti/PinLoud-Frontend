@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { UserService } from '../../../shared/services/user/user.service';
+import { UserRegister } from '../../../interfaces/user/user-register';
 
 @Component({
   selector: 'app-register-form',
@@ -50,18 +51,37 @@ export class RegisterFormComponent {
       this.registerForm.value['password'] ===
         this.registerForm.value['confPassword']
     ) {
-      const userData = {
+      const userData: UserRegister = {
         username: this.registerForm.value['username'],
         email: this.registerForm.value['email'],
         password: this.registerForm.value['password'],
       };
 
-      this.userService.userRegister(userData).subscribe(
-        (res) => console.log(res),
-        (err) => err
-      );
+      const verifyUserData: UserRegister = {
+        username: userData.username.trim(),
+        email: userData.email.trim(),
+        password: userData.password.trim(),
+      };
 
-      this.registerForm.reset();
+      if (
+        userData.username !== verifyUserData.username ||
+        userData.password !== verifyUserData.password ||
+        userData.email !== verifyUserData.email
+      ) {
+        alert('Os dados não podem inciar ou terminar com espaçamentos');
+
+        return;
+      } else {
+        this.userService.userRegister(verifyUserData).subscribe(
+          (res) => {
+            alert('Dados cadastrados com sucesso!');
+            this.registerForm.reset();
+          },
+          (err) => {
+            alert('Não foi possível se registrar. Por favor, tente novamente!');
+          }
+        );
+      }
     }
   }
 }

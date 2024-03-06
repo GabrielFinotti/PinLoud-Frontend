@@ -10,7 +10,7 @@ export class UserService {
   private url!: string;
 
   constructor(private http: HttpClient) {
-    this.url = 'http://localhost:8000/api/v1/user';
+    this.url = 'http://localhost:8000/api/v1/accounts/register/';
   }
 
   public userRegister(userData: UserRegister) {
