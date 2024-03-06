@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PinList } from '../../../interfaces/pins/pin-list';
 import { PinAllData } from '../../../interfaces/pins/pin-all-data';
-import { PinsCreate } from '../../../interfaces/pins/pins-create';
 
 @Injectable({
   providedIn: 'root',
@@ -23,21 +22,11 @@ export class PinsService {
     return this.http.get<PinAllData>(`${this.url}/pins/all_data/${id}`);
   }
 
-  public createPin(pinData: PinsCreate, token: string) {
+  public createPin(pinData: FormData, token: string) {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
 
-    return this.http.post(
-      `${this.url}/pins/`,
-      {
-        title: pinData.title,
-        description: pinData.description,
-        image: pinData.image.name,
-        ideas: pinData.ideas,
-        user: pinData.user,
-      },
-      { headers }
-    );
+    return this.http.post(`${this.url}/pins/`, pinData, { headers });
   }
 }

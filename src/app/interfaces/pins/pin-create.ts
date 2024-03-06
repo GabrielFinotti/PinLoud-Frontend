@@ -1,7 +1,7 @@
-export interface PinsCreate {
+export interface PinCreate {
+  image: File;
   title: string;
   description: string;
-  image: File;
   ideas: {
     title: string;
   }[];

@@ -5,13 +5,13 @@ import { NgClass } from '@angular/common';
 import {
   FormArray,
   FormBuilder,
-  FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import { PinsService } from '../../../shared/services/pin/pins.service';
-import { PinsCreate } from '../../../interfaces/pins/pins-create';
+import { Router } from '@angular/router';
+import { PinCreate } from '../../../interfaces/pins/pin-create';
 
 @Component({
   selector: 'app-pin-create-form',
@@ -30,7 +30,8 @@ export class PinCreateFormComponent implements OnInit {
   constructor(
     private ideasService: IdeasService,
     private pinsService: PinsService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.selectedTag = [];
     this.tagSelectionStage = {};
@@ -123,29 +124,52 @@ export class PinCreateFormComponent implements OnInit {
       const token: string =
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5Nzg5NzA3LCJpYXQiOjE3MDk3MDMzMDcsImp0aSI6ImQxM2M2MTA2MDMwNzQxYTJhMDYxNTBmN2I5NTNmOTIxIiwidXNlcl9pZCI6MX0.Mz-tdjcz_CXN954SI4a6W9VrABpe9j_SktuAkSrVOoQ';
 
-      const pinData: PinsCreate = {
+      const pinData: PinCreate = {
+        image: this.pinCreateForm.value['image'],
         title: this.pinCreateForm.value['title'],
         description: this.pinCreateForm.value['description'],
-        image: this.pinCreateForm.value['image'],
         ideas: this.pinCreateForm.value['tags'],
         user: 1,
       };
 
-      console.log(pinData);
+      const veryfiPinData: Partial<PinCreate> = {
+        title: pinData.title.trim(),
+        description: pinData.description.trim(),
+      };
 
-      this.pinsService.createPin(pinData, token).subscribe(
-        (res) => {
-          alert('Imagem enviada com sucesso!');
-        },
-        (err) => {
-          alert(
-            'Erro ao enviar imagem, verifique os campos e tente novamente!'
-          );
-          console.log(err);
-        }
-      );
+      if (
+        pinData.title !== veryfiPinData.title ||
+        pinData.description !== veryfiPinData.description
+      ) {
+        alert(
+          'O título e descrição não podem iniciar ou terminar com espaçamentos!'
+        );
+
+        return;
+      } else {
+        const formData = new FormData();
+        formData.append('title', pinData.title);
+        formData.append('description', pinData.description);
+        formData.append('image', pinData.image);
+        formData.append('user', pinData.user.toString());
+        formData.append('ideas', JSON.stringify([pinData.ideas]));
+
+        this.pinsService.createPin(formData, token).subscribe(
+          (res) => {
+            alert('Imagem enviada com sucesso!');
+            this.router.navigateByUrl('/pins');
+          },
+          (err) => {
+            alert(
+              'Erro ao enviar imagem, verifique os campos e tente novamente!'
+            );
+          }
+        );
+      }
     } else {
-      alert('Todos os campos devem estar preenchidos!');
+      alert(
+        'Todos os campos devem estar preenchidos e não podem conter espaçamentos!'
+      );
     }
   }
 }
