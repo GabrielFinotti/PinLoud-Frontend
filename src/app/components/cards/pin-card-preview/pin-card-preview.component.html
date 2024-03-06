@@ -6,7 +6,7 @@
     <h2 class="fs-4 fw-medium mb-4">{{ pinData.description }}</h2>
     <div class="d-flex flex-wrap gap-2">
       @for (tag of pinData.ideas; track $index) {
-      <p class="fs-5 fw-light p-2">#{{ tag.title }}</p>
+      <p class="fs-5 fw-light text-capitalize p-2">#{{ tag.title }}</p>
       }
     </div>
   </div>

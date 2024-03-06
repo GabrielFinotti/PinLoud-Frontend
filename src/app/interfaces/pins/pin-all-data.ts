@@ -7,10 +7,7 @@ export interface PinAllData {
     id: number;
     email: string;
     username: string;
-    first_name: string;
-    last_name: string;
     bio: string | null;
-    website: string | null;
     profile_picture: string | null;
   };
   comments: string[];

@@ -1,5 +1,9 @@
 <h1 class="text-center fw-bold mb-4">Enviar Imagem</h1>
-<form class="d-lg-flex justify-content-lg-between">
+<form
+  [formGroup]="pinCreateForm"
+  class="d-lg-flex justify-content-lg-between"
+  (ngSubmit)="onSubmit()"
+>
   <section id="imgFile">
     <div class="mb-4">
       <label
@@ -11,6 +15,7 @@
         id="file"
         class="d-none"
         type="file"
+        formControlName="image"
         (change)="showImagePreview($event)"
       />
       @if (imgPreview) {
@@ -28,13 +33,19 @@
   <section id="inputGroup">
     <div class="mb-4">
       <h2 class="mb-3">Título</h2>
-      <input class="w-100" type="text" placeholder="Use a criatividade" />
+      <input
+        class="w-100"
+        type="text"
+        placeholder="Use a criatividade"
+        formControlName="title"
+      />
     </div>
     <div class="mb-4">
       <h2 class="mb-3">Descrição</h2>
       <textarea
         class="w-100"
         placeholder="O que sua imagem signifca?"
+        formControlName="description"
       ></textarea>
     </div>
     <div id="tags" class="mb-4">
@@ -49,7 +60,7 @@
       } @else {
       <div class="d-flex flex-wrap gap-2">
         @for (selected of selectedTag; track $index) {
-        <span class="text-capitalize">#{{ selected }}</span>
+        <span class="text-capitalize">#{{ selected.title }}</span>
         }
       </div>
       }
@@ -69,8 +80,10 @@
     </div>
     <input
       class="border-0 d-block m-auto pt-2 pb-2 h4 fs-4"
+      [ngClass]="pinCreateForm.invalid ? 'disabled ' : ''"
       type="submit"
-      value="Criar"
+      value="Enviar"
+      [disabled]="pinCreateForm.invalid"
     />
   </section>
 </form>
