@@ -37,8 +37,14 @@ export class LoginFormComponent {
       };
 
       this.userService.userLogin(userData).subscribe(
-        (res) => console.log(res),
-        (err) => err
+        (res) => {
+          alert('Seja bem vindo(a)!');
+        },
+        (err) => {
+          alert(
+            'Não foi possível se conectar, verifique os dados e tente novamente!'
+          );
+        }
       );
     }
   }

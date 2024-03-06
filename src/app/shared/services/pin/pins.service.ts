@@ -11,14 +11,14 @@ export class PinsService {
   private url!: string;
 
   constructor(private http: HttpClient) {
-    this.url = 'http://localhost:8000/api/v1/pins';
+    this.url = 'http://localhost:8000/api/v1';
   }
 
   public getPinsList(): Observable<PinList[]> {
-    return this.http.get<PinList[]>(`${this.url}`);
+    return this.http.get<PinList[]>(`${this.url}/pins`);
   }
 
   public getPinAllData(id: number): Observable<PinAllData> {
-    return this.http.get<PinAllData>(`${this.url}/all_data/${id}`);
+    return this.http.get<PinAllData>(`${this.url}pins/all_data/${id}`);
   }
 }

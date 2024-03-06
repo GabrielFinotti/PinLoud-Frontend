@@ -10,7 +10,7 @@ export class IdeasService {
   private url!: string;
 
   constructor(private http: HttpClient) {
-    this.url = 'http://localhost:8000/api/v1/ideas';
+    this.url = 'http://localhost:8000/api/v1';
   }
 
   public getIdeas(token: string): Observable<Ideas[]> {
@@ -18,6 +18,6 @@ export class IdeasService {
       Authorization: `Bearer ${token}`,
     });
 
-    return this.http.get<Ideas[]>(`${this.url}`, { headers });
+    return this.http.get<Ideas[]>(`${this.url}/ideas`, { headers });
   }
 }

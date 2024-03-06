@@ -10,11 +10,11 @@ export class UserService {
   private url!: string;
 
   constructor(private http: HttpClient) {
-    this.url = 'http://localhost:8000/api/v1/accounts/register/';
+    this.url = 'http://localhost:8000/api/v1';
   }
 
   public userRegister(userData: UserRegister) {
-    return this.http.post(`${this.url}`, {
+    return this.http.post(`${this.url}/accounts/register/`, {
       username: userData.username,
       email: userData.email,
       password: userData.password,
@@ -22,7 +22,7 @@ export class UserService {
   }
 
   public userLogin(userData: UserLogin) {
-    return this.http.post(`${this.url}`, {
+    return this.http.post(`${this.url}/authentications/token/`, {
       email: userData.email,
       password: userData.password,
     });
