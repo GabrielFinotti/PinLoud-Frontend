@@ -57,10 +57,7 @@ export class PinCreateFormComponent implements OnInit {
   }
 
   protected getAllIdeas() {
-    const token: string =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5Nzg5NzA3LCJpYXQiOjE3MDk3MDMzMDcsImp0aSI6ImQxM2M2MTA2MDMwNzQxYTJhMDYxNTBmN2I5NTNmOTIxIiwidXNlcl9pZCI6MX0.Mz-tdjcz_CXN954SI4a6W9VrABpe9j_SktuAkSrVOoQ';
-
-    this.ideasService.getIdeas(token).subscribe(
+    this.ideasService.getIdeas().subscribe(
       (res) => (this.tagName = res),
       (err) => console.error(err)
     );

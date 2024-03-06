@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Ideas } from '../../../interfaces/ideas';
 import { Observable } from 'rxjs';
@@ -13,11 +13,7 @@ export class IdeasService {
     this.url = 'http://localhost:8000/api/v1';
   }
 
-  public getIdeas(token: string): Observable<Ideas[]> {
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${token}`,
-    });
-
-    return this.http.get<Ideas[]>(`${this.url}/ideas`, { headers });
+  public getIdeas(): Observable<Ideas[]> {
+    return this.http.get<Ideas[]>(`${this.url}/ideas`);
   }
 }
