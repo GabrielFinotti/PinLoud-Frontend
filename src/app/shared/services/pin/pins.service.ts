@@ -33,7 +33,7 @@ export class PinsService {
       {
         title: pinData.title,
         description: pinData.description,
-        image: pinData.image,
+        image: pinData.image.name,
         ideas: pinData.ideas,
         user: pinData.user,
       },

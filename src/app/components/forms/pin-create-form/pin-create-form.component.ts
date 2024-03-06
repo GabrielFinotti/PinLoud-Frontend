@@ -5,6 +5,7 @@ import { NgClass } from '@angular/common';
 import {
   FormArray,
   FormBuilder,
+  FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
@@ -34,7 +35,7 @@ export class PinCreateFormComponent implements OnInit {
     this.selectedTag = [];
     this.tagSelectionStage = {};
     this.pinCreateForm = this.formBuilder.group({
-      image: [null],
+      image: [null, [Validators.required]],
       title: [
         '',
         [
@@ -65,14 +66,12 @@ export class PinCreateFormComponent implements OnInit {
 
   protected selectTag(index: number) {
     const selectTag = this.tagName[index].title;
-    const tagExists = this.selectedTag.find((tag) => tag.title === selectTag);
+    const tagExistsIndex = this.selectedTag.findIndex(
+      (tag) => tag.title === selectTag
+    );
 
-    if (tagExists) {
-      const indexToRemove = this.selectedTag.findIndex(
-        (tag) => tag.title === selectTag
-      );
-
-      this.selectedTag.splice(indexToRemove, 1);
+    if (tagExistsIndex !== -1) {
+      this.selectedTag.splice(tagExistsIndex, 1);
       this.tagSelectionStage[selectTag] = false;
     } else {
       this.selectedTag.push({ title: selectTag });
@@ -93,8 +92,6 @@ export class PinCreateFormComponent implements OnInit {
         })
       );
     });
-
-    this.pinCreateForm.setControl('tags', tagsArray);
   }
 
   public showImagePreview(event: Event) {
@@ -102,15 +99,22 @@ export class PinCreateFormComponent implements OnInit {
 
     if (target.files && target.files.length > 0) {
       const file: File = target.files[0];
-      const reader = new FileReader();
 
-      reader.onload = (e: ProgressEvent<FileReader>) => {
-        if (e.target) {
-          this.imgPreview = e.target.result as string;
-        }
-      };
+      if (file.type.startsWith('image/') && !file.type.includes('gif')) {
+        const reader = new FileReader();
 
-      reader.readAsDataURL(file);
+        reader.onload = (e: ProgressEvent<FileReader>) => {
+          if (e.target) {
+            this.imgPreview = e.target.result as string;
+          }
+        };
+
+        reader.readAsDataURL(file);
+        this.pinCreateForm.get('image')?.setValue(file);
+      } else {
+        alert('O arquivo tem que ser uma imagem, e não pode ser um gif!');
+        target.value = '';
+      }
     }
   }
 
@@ -137,6 +141,7 @@ export class PinCreateFormComponent implements OnInit {
           alert(
             'Erro ao enviar imagem, verifique os campos e tente novamente!'
           );
+          console.log(err);
         }
       );
     } else {
