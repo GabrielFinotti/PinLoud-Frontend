@@ -9,6 +9,7 @@ import { PinAllData } from '../../../interfaces/pins/pin-all-data';
 })
 export class PinsService {
   private url!: string;
+  private token!: string | null;
 
   constructor(private http: HttpClient) {
     this.url = 'http://localhost:8000/api/v1';
@@ -22,9 +23,13 @@ export class PinsService {
     return this.http.get<PinAllData>(`${this.url}/pins/all_data/${id}`);
   }
 
-  public createPin(pinData: FormData, token: string) {
+  public createPin(pinData: FormData) {
+    if (typeof window !== 'undefined') {
+      this.token = sessionStorage.getItem('token');
+    }
+
     const headers = new HttpHeaders({
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${this.token}`,
     });
 
     return this.http.post(`${this.url}/pins/`, pinData, { headers });

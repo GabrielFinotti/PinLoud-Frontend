@@ -4,6 +4,7 @@ import { UserLogin } from '../../../interfaces/user/user-login';
 import { UserRegister } from '../../../interfaces/user/user-register';
 import { Observable } from 'rxjs';
 import { UserData } from '../../../interfaces/user/user-data';
+import { UserResponse } from '../../../interfaces/user/user-response';
 
 @Injectable({
   providedIn: 'root',
@@ -23,8 +24,8 @@ export class UserService {
     });
   }
 
-  public userLogin(userData: UserLogin) {
-    return this.http.post(`${this.url}/authentications/token/`, {
+  public userLogin(userData: UserLogin): Observable<UserResponse> {
+    return this.http.post<UserResponse>(`${this.url}/authentications/token/`, {
       email: userData.email,
       password: userData.password,
     });

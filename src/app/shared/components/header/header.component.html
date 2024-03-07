@@ -45,7 +45,7 @@
           routerLinkActive="link-actived"
           >Criar</a
         >
-        @if (!userLogin) {
+        @if (userLogin) {
         <a
           id="account"
           class="nav-link link-light text-nowrap"
@@ -56,7 +56,7 @@
         } @else {
         <a
           class="d-flex gap-2 nav-link link-light text-nowrap"
-          [routerLink]="['/account/user', 1]"
+          [routerLink]="['/account/user', id]"
           routerLinkActive="link-actived"
         >
           <span>Usuário 1</span>

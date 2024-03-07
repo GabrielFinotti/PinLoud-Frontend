@@ -121,15 +121,21 @@ export class PinCreateFormComponent implements OnInit {
 
   public onSubmit() {
     if (this.pinCreateForm.valid) {
-      const token: string =
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5Nzg5NzA3LCJpYXQiOjE3MDk3MDMzMDcsImp0aSI6ImQxM2M2MTA2MDMwNzQxYTJhMDYxNTBmN2I5NTNmOTIxIiwidXNlcl9pZCI6MX0.Mz-tdjcz_CXN954SI4a6W9VrABpe9j_SktuAkSrVOoQ';
+      let userId!: number;
+
+      if (typeof window !== 'undefined') {
+        const verifyId = sessionStorage.getItem('id');
+        if (verifyId !== null) {
+          userId = parseInt(verifyId);
+        }
+      }
 
       const pinData: PinCreate = {
         image: this.pinCreateForm.value['image'],
         title: this.pinCreateForm.value['title'],
         description: this.pinCreateForm.value['description'],
         ideas: this.pinCreateForm.value['tags'],
-        user: 1,
+        user: userId,
       };
 
       const veryfiPinData: Partial<PinCreate> = {
@@ -154,7 +160,7 @@ export class PinCreateFormComponent implements OnInit {
         formData.append('user', pinData.user.toString());
         formData.append('ideas', JSON.stringify([pinData.ideas]));
 
-        this.pinsService.createPin(formData, token).subscribe(
+        this.pinsService.createPin(formData).subscribe(
           (res) => {
             alert('Imagem enviada com sucesso!');
             this.router.navigateByUrl('/pins');

@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { UserLogin } from '../../../interfaces/user/user-login';
 import { UserService } from '../../../shared/services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -21,7 +22,8 @@ export class LoginFormComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -39,6 +41,8 @@ export class LoginFormComponent {
       this.userService.userLogin(userData).subscribe(
         (res) => {
           alert('Seja bem vindo(a)!');
+          this.setUserCredentiais(res.access, 1);
+          this.router.navigateByUrl('/pins');
         },
         (err) => {
           alert(
@@ -46,6 +50,13 @@ export class LoginFormComponent {
           );
         }
       );
+    }
+  }
+
+  private setUserCredentiais(token: string, id: number) {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('token', token);
+      sessionStorage.setItem('id', id.toString());
     }
   }
 }
