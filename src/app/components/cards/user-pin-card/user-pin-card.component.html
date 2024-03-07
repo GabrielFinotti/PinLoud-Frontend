@@ -1,4 +1,4 @@
-@for (pin of userPins.pins; track $index) {
+@if (userPins) { @for (pin of userPins.pins; track $index) {
 <div class="img-card position-relative">
   <img [id]="pin.id" [src]="pin.image" [alt]="pin.title" />
   <button class="edit position-absolute" type="button">
@@ -12,4 +12,4 @@
     <img src="../../../../assets/icons/excluir-icon.svg" alt="Excluir" />
   </button>
 </div>
-}
+} }
