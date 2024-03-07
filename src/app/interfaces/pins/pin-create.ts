@@ -3,7 +3,7 @@ export interface PinCreate {
   title: string;
   description: string;
   ideas: {
-    title: string;
+    id: number;
   }[];
   user: number;
 }
