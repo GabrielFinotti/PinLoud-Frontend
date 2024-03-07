@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IdeasService } from '../../../shared/services/pin/ideas.service';
-import { Ideas } from '../../../interfaces/ideas';
+import { Ideas } from '../../../interfaces/ideas/ideas';
 import { NgClass } from '@angular/common';
 import {
   FormArray,

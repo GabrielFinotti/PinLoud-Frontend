@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserLogin } from '../../../interfaces/user/user-login';
 import { UserRegister } from '../../../interfaces/user/user-register';
+import { Observable } from 'rxjs';
+import { UserData } from '../../../interfaces/user/user-data';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +28,9 @@ export class UserService {
       email: userData.email,
       password: userData.password,
     });
+  }
+
+  public getUserData(userName: string): Observable<UserData> {
+    return this.http.get<UserData>(`${this.url}/accounts/user/${userName}`);
   }
 }
