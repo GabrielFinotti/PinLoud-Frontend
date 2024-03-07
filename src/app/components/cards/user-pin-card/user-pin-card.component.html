@@ -1,9 +1,15 @@
+@for (pin of userPins.pins; track $index) {
 <div class="img-card position-relative">
-  <img src="" alt="" />
+  <img [id]="pin.id" [src]="pin.image" [alt]="pin.title" />
   <button class="edit position-absolute" type="button">
     <img src="../../../../assets/icons/editar-icon.svg" alt="Editar" />
   </button>
-  <button class="delete position-absolute" type="button">
+  <button
+    class="delete position-absolute"
+    type="button"
+    (click)="deletePin(pin.id)"
+  >
     <img src="../../../../assets/icons/excluir-icon.svg" alt="Excluir" />
   </button>
 </div>
+}

@@ -56,13 +56,15 @@
         } @else {
         <a
           class="d-flex gap-2 nav-link link-light text-nowrap"
-          [routerLink]="['/account/user', id]"
+          [routerLink]="['/account/user']"
           routerLinkActive="link-actived"
         >
           <span>Usuário 1</span>
           <img
             class="d-none d-lg-block position-relative"
-            src="../../../../assets/icons/user-icon.svg"
+            [src]="
+              userImage ? userImage : '../../../../assets/icons/user-icon.svg'
+            "
             alt=""
           />
         </a>

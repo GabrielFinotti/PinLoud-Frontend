@@ -16,7 +16,7 @@ export const routes: Routes = [
     path: 'account',
     children: [
       { path: 'form', component: FormComponent },
-      { path: 'user/:id', component: UserComponent },
+      { path: 'user', component: UserComponent },
     ],
   },
   { path: '**', component: NotFoundComponent },

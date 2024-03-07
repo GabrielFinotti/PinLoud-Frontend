@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserLogin } from '../../../interfaces/user/user-login';
 import { UserRegister } from '../../../interfaces/user/user-register';
@@ -11,6 +11,7 @@ import { UserResponse } from '../../../interfaces/user/user-response';
 })
 export class UserService {
   private url!: string;
+  private token!: string | null;
 
   constructor(private http: HttpClient) {
     this.url = 'http://localhost:8000/api/v1';
@@ -31,7 +32,15 @@ export class UserService {
     });
   }
 
-  public getUserData(userName: string): Observable<UserData> {
-    return this.http.get<UserData>(`${this.url}/accounts/user/${userName}`);
+  public getUserData(): Observable<UserData> {
+    if (typeof window !== 'undefined') {
+      this.token = sessionStorage.getItem('token');
+    }
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`,
+    });
+
+    return this.http.get<UserData>(`${this.url}/accounts/user/`, { headers });
   }
 }

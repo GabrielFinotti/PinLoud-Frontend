@@ -9,5 +9,6 @@ export interface UserData {
   pins: {
     id: number;
     image: string;
+    title: string;
   }[];
 }

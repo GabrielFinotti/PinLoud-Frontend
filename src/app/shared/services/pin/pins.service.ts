@@ -13,6 +13,10 @@ export class PinsService {
 
   constructor(private http: HttpClient) {
     this.url = 'http://localhost:8000/api/v1';
+
+    if (typeof window !== 'undefined') {
+      this.token = sessionStorage.getItem('token');
+    }
   }
 
   public getPinsList(): Observable<PinList[]> {
@@ -24,14 +28,18 @@ export class PinsService {
   }
 
   public createPin(pinData: FormData) {
-    if (typeof window !== 'undefined') {
-      this.token = sessionStorage.getItem('token');
-    }
-
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.token}`,
     });
 
     return this.http.post(`${this.url}/pins/`, pinData, { headers });
+  }
+
+  public deletePin(id: number) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`,
+    });
+
+    return this.http.delete(`${this.url}/pins/${id}`, { headers });
   }
 }

@@ -1,29 +1,23 @@
 <main class="container">
+  @if (userData) {
   <section id="userData" class="d-flex flex-column flex-md-row gap-md-5 mb-4">
     <div class="d-flex flex-column align-items-center gap-2">
-      <img src="../../../assets/icons/user-icon.svg" alt="" />
-      <p class="fs-5 fw-bold">Usuário 1</p>
+      <img
+        [src]="
+          userData.user.profile_picture
+            ? userData.user.profile_picture
+            : '../../../assets/icons/user-icon.svg'
+        "
+        [alt]="userData.user.username"
+      />
+      <p class="fs-5 fw-bold">{{ userData.user.username }}</p>
     </div>
     <div id="bio" class="p-2 p-md-4">
       <h5 class="fw-bold">Descrição</h5>
-      <p class="overflow-y-auto">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius quaerat
-        culpa blanditiis magni explicabo laborum maiores illum. Molestiae
-        doloremque nesciunt facere excepturi, rem commodi maxime accusamus
-        corporis iste blanditiis, ipsam illo animi ea harum aperiam. Id
-        voluptatum fugiat quod repellat fuga ex itaque molestiae corrupti nam
-        laudantium? Minima, totam? Aspernatur fuga sit neque natus ducimus
-        exercitationem eos officia, porro quidem officiis sapiente. Similique
-        quaerat necessitatibus molestiae sint nam! Laboriosam, corporis illo sed
-        excepturi odit nostrum dignissimos corrupti fugiat veritatis
-        consequuntur perferendis nulla exercitationem, eligendi numquam veniam
-        neque rem porro! Esse perspiciatis accusamus molestias dicta optio
-        blanditiis, natus cumque quod nemo voluptatum aspernatur iusto! Quae
-        obcaecati minima ratione omnis voluptatem cum delectus blanditiis modi.
-        Ipsam inventore praesentium quae illo tenetur mollitia?
-      </p>
+      <p class="overflow-y-auto">{{ userData.user.bio }}</p>
     </div>
   </section>
+  }
   <h4 class="mb-3">Minhas imagens</h4>
   <section id="userPins">
     <app-user-pin-card></app-user-pin-card>

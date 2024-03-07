@@ -1,5 +1,6 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-header',
@@ -8,28 +9,32 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements DoCheck {
+export class HeaderComponent implements OnInit {
   protected userLogin!: boolean;
-  protected id!: number;
+  protected userImage!: string;
 
-  constructor() {
+  constructor(private userService: UserService) {
     this.userLogin = true;
   }
 
-  ngDoCheck(): void {
-    this.verifyUserId();
-  }
+  ngOnInit(): void {}
 
   protected verifyUserId() {
     if (typeof window !== 'undefined') {
-      const verifyId = sessionStorage.getItem('id');
+      const verifytoken = sessionStorage.getItem('token');
 
-      if (verifyId !== null) {
-        this.id = parseInt(verifyId);
+      if (verifytoken !== null) {
         this.userLogin = false;
+        this.getUserImage();
       } else {
         this.userLogin = true;
       }
     }
+  }
+
+  private getUserImage() {
+    this.userService.getUserData().subscribe((res) => {
+      this.userImage = res.user.profile_picture;
+    });
   }
 }

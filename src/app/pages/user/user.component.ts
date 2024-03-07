@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
   }
 
   private getUserData() {
-    this.userService.getUserData('Finotti').subscribe(
+    this.userService.getUserData().subscribe(
       (res) => {
         this.userData = res;
       },
