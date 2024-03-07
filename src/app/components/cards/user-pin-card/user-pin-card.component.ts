@@ -32,6 +32,7 @@ export class UserPinCardComponent implements OnInit {
     this.pinsService.deletePin(id).subscribe(
       (res) => {
         alert('Imagem deletada com sucesso!');
+        this.getUserPins();
       },
       (err) => {
         alert('Não foi possivel deletar a imagem, por favor, tente novamente!');
