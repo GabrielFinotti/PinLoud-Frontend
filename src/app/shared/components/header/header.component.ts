@@ -1,6 +1,7 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
+import { ToggleTokenService } from '../../../services/access/toggle-token.service';
 
 @Component({
   selector: 'app-header',
@@ -13,22 +14,25 @@ export class HeaderComponent implements OnInit {
   protected userLogin!: boolean;
   protected userImage!: string;
 
-  constructor(private userService: UserService) {
+  constructor(
+    private userService: UserService,
+    private toggleTokenService: ToggleTokenService
+  ) {
     this.userLogin = true;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.toggleTokenService.token$.subscribe((token) => {
+      this.verifyUserId(token);
+    });
+  }
 
-  protected verifyUserId() {
-    if (typeof window !== 'undefined') {
-      const verifytoken = sessionStorage.getItem('token');
-
-      if (verifytoken !== null) {
-        this.userLogin = false;
-        this.getUserImage();
-      } else {
-        this.userLogin = true;
-      }
+  protected verifyUserId(token: string | null) {
+    if (token !== null) {
+      this.userLogin = false;
+      this.getUserImage();
+    } else {
+      this.userLogin = true;
     }
   }
 

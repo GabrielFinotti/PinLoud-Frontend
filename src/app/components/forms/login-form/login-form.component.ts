@@ -56,7 +56,6 @@ export class LoginFormComponent {
   private setUserCredentiais(token: string, id: number) {
     if (typeof window !== 'undefined') {
       sessionStorage.setItem('token', token);
-      sessionStorage.setItem('id', id.toString());
     }
   }
 }

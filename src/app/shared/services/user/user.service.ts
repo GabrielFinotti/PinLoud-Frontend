@@ -15,6 +15,10 @@ export class UserService {
 
   constructor(private http: HttpClient) {
     this.url = 'http://localhost:8000/api/v1';
+
+    if (typeof window !== 'undefined') {
+      this.token = sessionStorage.getItem('token');
+    }
   }
 
   public userRegister(userData: UserRegister) {
@@ -33,10 +37,6 @@ export class UserService {
   }
 
   public getUserData(): Observable<UserData> {
-    if (typeof window !== 'undefined') {
-      this.token = sessionStorage.getItem('token');
-    }
-
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.token}`,
     });
