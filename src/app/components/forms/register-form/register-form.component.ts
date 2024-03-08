@@ -69,6 +69,7 @@ export class RegisterFormComponent {
         userData.email !== verifyUserData.email
       ) {
         alert('Os dados não podem inciar ou terminar com espaçamentos!');
+        this.registerForm.reset();
 
         return;
       } else {
