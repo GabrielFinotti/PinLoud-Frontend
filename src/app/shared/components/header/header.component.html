@@ -53,22 +53,24 @@
           routerLinkActive="link-actived"
           >Entre ou Cadastre-se</a
         >
-        } @else {
+        } @else { @if(userImage) {
         <a
           class="d-flex gap-2 nav-link link-light text-nowrap"
           [routerLink]="['/account/user']"
           routerLinkActive="link-actived"
         >
-          <span>Usuário 1</span>
+          <span>{{ userImage.user.username }}</span>
           <img
             class="d-none d-lg-block position-relative"
             [src]="
-              userImage ? userImage : '../../../../assets/icons/user-icon.svg'
+              userImage.user.profile_picture
+                ? userImage.user.profile_picture
+                : '../../../../assets/icons/user-icon.svg'
             "
             alt=""
           />
         </a>
-        }
+        } }
       </div>
     </div>
   </nav>

@@ -2,6 +2,7 @@ import { Component, DoCheck, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { ToggleTokenService } from '../../../services/access/toggle-token.service';
+import { UserData } from '../../../interfaces/user/user-data';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ import { ToggleTokenService } from '../../../services/access/toggle-token.servic
 })
 export class HeaderComponent implements OnInit {
   protected userLogin!: boolean;
-  protected userImage!: string;
+  protected userImage!: UserData;
 
   constructor(
     private userService: UserService,
@@ -38,7 +39,7 @@ export class HeaderComponent implements OnInit {
 
   private getUserImage() {
     this.userService.getUserData().subscribe((res) => {
-      this.userImage = res.user.profile_picture;
+      this.userImage = res;
     });
   }
 }

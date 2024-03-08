@@ -17,11 +17,12 @@ header {
         }
 
         img {
+          border: 2px solid $primary-bg-color;
           border-radius: 50px;
 
           bottom: 7px;
 
-          width: 45px;
+          width: 50px;
 
           object-fit: cover;
           aspect-ratio: 1/1;
