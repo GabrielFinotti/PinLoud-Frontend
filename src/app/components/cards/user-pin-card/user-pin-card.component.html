@@ -8,8 +8,40 @@
     class="delete position-absolute"
     type="button"
     (click)="deletePin(pin.id)"
+    data-bs-toggle="modal"
+    data-bs-target="#staticModal"
   >
     <img src="../../../../assets/icons/excluir-icon.svg" alt="Excluir" />
   </button>
 </div>
-} }
+} @empty {
+<p class="fs-5 text-nowrap">Adicione uma imagem e encontre ela aqui!</p>
+} } @else { }
+<div
+  class="modal modal-static fade"
+  id="staticModal"
+  data-bs-keyboard="false"
+  tabindex="-1"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title h4">Tens certeza que queres fazer isso?</h1>
+        <button
+          type="button"
+          class="btn-close-white"
+          data-bs-dismiss="modal "
+        ></button>
+      </div>
+      <div class="modal-body">
+        <span
+          >Ao excluir, não será possível recuperar essa imagem novamente!</span
+        >
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" data-bs-dismiss="modal">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>

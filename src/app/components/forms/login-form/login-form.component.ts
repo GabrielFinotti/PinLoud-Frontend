@@ -41,7 +41,7 @@ export class LoginFormComponent {
       this.userService.userLogin(userData).subscribe(
         (res) => {
           alert('Seja bem vindo(a)!');
-          this.setUserCredentiais(res.access, 1);
+          this.setUserCredentiais(res.access);
           this.router.navigateByUrl('/pins');
         },
         (err) => {
@@ -53,7 +53,7 @@ export class LoginFormComponent {
     }
   }
 
-  private setUserCredentiais(token: string, id: number) {
+  private setUserCredentiais(token: string) {
     if (typeof window !== 'undefined') {
       sessionStorage.setItem('token', token);
     }

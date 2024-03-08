@@ -12,6 +12,7 @@ import {
 import { PinsService } from '../../../shared/services/pin/pins.service';
 import { Router } from '@angular/router';
 import { PinCreate } from '../../../interfaces/pins/pin-create';
+import { UserService } from '../../../shared/services/user/user.service';
 
 @Component({
   selector: 'app-pin-create-form',
@@ -21,6 +22,7 @@ import { PinCreate } from '../../../interfaces/pins/pin-create';
   styleUrl: './pin-create-form.component.scss',
 })
 export class PinCreateFormComponent implements OnInit {
+  private id!: number;
   protected tagName!: Ideas[];
   protected selectedTag!: Array<{ title: string }>;
   public imgPreview!: string | ArrayBuffer;
@@ -30,6 +32,7 @@ export class PinCreateFormComponent implements OnInit {
   constructor(
     private ideasService: IdeasService,
     private pinsService: PinsService,
+    private userService: UserService,
     private formBuilder: FormBuilder,
     private router: Router
   ) {
@@ -56,9 +59,16 @@ export class PinCreateFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllIdeas();
+    this.getUserId();
   }
 
-  protected getAllIdeas() {
+  private getUserId() {
+    this.userService.getUserData().subscribe((res) => {
+      this.id = res.user.id;
+    });
+  }
+
+  private getAllIdeas() {
     this.ideasService.getIdeas().subscribe(
       (res) => (this.tagName = res),
       (err) => console.error(err)
@@ -121,21 +131,12 @@ export class PinCreateFormComponent implements OnInit {
 
   public onSubmit() {
     if (this.pinCreateForm.valid) {
-      let userId!: number;
-
-      if (typeof window !== 'undefined') {
-        const verifyId = sessionStorage.getItem('id');
-        if (verifyId !== null) {
-          userId = parseInt(verifyId);
-        }
-      }
-
       const pinData: PinCreate = {
         image: this.pinCreateForm.value['image'],
         title: this.pinCreateForm.value['title'],
         description: this.pinCreateForm.value['description'],
         ideas: this.pinCreateForm.value['tags'],
-        user: userId,
+        user: this.id,
       };
 
       const veryfiPinData: Partial<PinCreate> = {
@@ -157,8 +158,15 @@ export class PinCreateFormComponent implements OnInit {
         formData.append('title', pinData.title);
         formData.append('description', pinData.description);
         formData.append('image', pinData.image);
-        formData.append('user', pinData.user.toString());
         formData.append('ideas', JSON.stringify([pinData.ideas]));
+
+        if (typeof pinData.user == 'number') {
+          formData.append('user', pinData.user.toString());
+        } else {
+          alert('Erro ao enviar imagem, id de usuário não encontrado!');
+
+          return;
+        }
 
         this.pinsService.createPin(formData).subscribe(
           (res) => {
