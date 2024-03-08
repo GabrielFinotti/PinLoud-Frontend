@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss',
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit {
   protected loginForm!: FormGroup;
 
   constructor(
@@ -31,6 +31,20 @@ export class LoginFormComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.verifyToken();
+  }
+
+  private verifyToken() {
+    if (typeof window !== 'undefined') {
+      const getToken = sessionStorage.getItem('token');
+
+      if (getToken !== null) {
+        this.router.navigateByUrl('/pins');
+      }
+    }
+  }
+
   protected getUserLogin() {
     if (this.loginForm.valid) {
       const userData: UserLogin = {
@@ -42,7 +56,7 @@ export class LoginFormComponent {
         (res) => {
           alert('Seja bem vindo(a)!');
           this.setUserCredentiais(res.access);
-          this.router.navigateByUrl('/pins');
+          window.location.reload();
         },
         (err) => {
           alert(
