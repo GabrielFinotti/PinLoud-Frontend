@@ -7,6 +7,7 @@ import { UserComponent } from './pages/user/user.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PinsViewComponent } from './pages/pins-view/pins-view.component';
 import { createPinGuard } from './guards/userRouter/create-pin.guard';
+import { userDataGuard } from './guards/userRouter/user-data.guard';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -21,7 +22,7 @@ export const routes: Routes = [
     path: 'account',
     children: [
       { path: 'form', component: FormComponent },
-      { path: 'user', component: UserComponent },
+      { path: 'user', component: UserComponent, canActivate: [userDataGuard] },
     ],
   },
   { path: '**', component: NotFoundComponent },

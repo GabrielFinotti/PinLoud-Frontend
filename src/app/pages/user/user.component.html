@@ -12,9 +12,13 @@
       />
       <p class="fs-5 fw-bold">{{ userData.user.username }}</p>
     </div>
-    <div id="bio" class="p-2 p-md-4">
+    <div id="bio" class="p-2 p-md-4 w-100">
       <h5 class="fw-bold">Descrição</h5>
-      <p class="overflow-y-auto">{{ userData.user.bio }}</p>
+      <p class="overflow-y-auto">
+        {{
+          userData.user.bio ? userData.user.bio : "Fale um pouco sobre você!"
+        }}
+      </p>
     </div>
   </section>
   }
