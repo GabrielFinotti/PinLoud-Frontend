@@ -67,7 +67,7 @@
         @for (tag of tagName; track $index;) {
         <li
           class="text-capitalize"
-          [ngClass]="{ selected: tagSelectionStage[tag.title] }"
+          [ngClass]="{ selected: tagSelectionStage[tag.id] }"
           (click)="selectTag($index)"
         >
           #{{ tag.title }}

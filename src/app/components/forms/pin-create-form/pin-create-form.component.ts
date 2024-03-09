@@ -24,9 +24,9 @@ import { UserService } from '../../../shared/services/user/user.service';
 export class PinCreateFormComponent implements OnInit {
   private id!: number;
   protected tagName!: Ideas[];
-  protected selectedTag!: Array<{ title: string }>;
+  protected selectedTag!: Array<{ id: number; title: string }>;
   public imgPreview!: string | ArrayBuffer;
-  public tagSelectionStage!: Record<string, boolean>;
+  public tagSelectionStage!: Record<number, boolean>;
   public pinCreateForm!: FormGroup;
 
   constructor(
@@ -51,7 +51,7 @@ export class PinCreateFormComponent implements OnInit {
       description: ['', [Validators.required, Validators.maxLength(500)]],
       tags: this.formBuilder.array([
         this.formBuilder.group({
-          title: ['', Validators.required],
+          id: ['', Validators.required],
         }),
       ]),
     });
@@ -76,17 +76,18 @@ export class PinCreateFormComponent implements OnInit {
   }
 
   protected selectTag(index: number) {
-    const selectTag = this.tagName[index].title;
+    const selectIdTag = this.tagName[index].id;
+    const selectNameTag = this.tagName[index].title;
     const tagExistsIndex = this.selectedTag.findIndex(
-      (tag) => tag.title === selectTag
+      (tag) => tag.id === selectIdTag
     );
 
     if (tagExistsIndex !== -1) {
       this.selectedTag.splice(tagExistsIndex, 1);
-      this.tagSelectionStage[selectTag] = false;
+      this.tagSelectionStage[selectIdTag] = false;
     } else {
-      this.selectedTag.push({ title: selectTag });
-      this.tagSelectionStage[selectTag] = true;
+      this.selectedTag.push({ id: selectIdTag, title: selectNameTag });
+      this.tagSelectionStage[selectIdTag] = true;
     }
 
     this.updateTagsInFormGroup();
@@ -99,7 +100,7 @@ export class PinCreateFormComponent implements OnInit {
     this.selectedTag.forEach((tag) => {
       tagsArray.push(
         this.formBuilder.group({
-          title: [tag.title, Validators.required],
+          id: [tag.id, Validators.required],
         })
       );
     });
@@ -163,7 +164,7 @@ export class PinCreateFormComponent implements OnInit {
         if (typeof pinData.user == 'number') {
           formData.append('user', pinData.user.toString());
         } else {
-          alert('Erro ao enviar imagem, id de usuário não encontrado!');
+          alert('Erro ao enviar imagem, usuário não encontrado!');
 
           return;
         }
