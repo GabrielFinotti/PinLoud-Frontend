@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { PinsService } from '../../../shared/services/pin/pins.service';
 import { PinAllData } from '../../../interfaces/pins/pin-all-data';
+import { LikeService } from '../../../shared/services/pin/like.service';
 
 @Component({
   selector: 'app-pin-card-preview',
@@ -13,7 +14,10 @@ export class PinCardPreviewComponent implements OnChanges {
   @Input() public id!: number;
   protected pinData!: PinAllData;
 
-  constructor(private pinsService: PinsService) {}
+  constructor(
+    private pinsService: PinsService,
+    private likeService: LikeService
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['id'].previousValue !== changes['id'].currentValue) {
@@ -27,4 +31,10 @@ export class PinCardPreviewComponent implements OnChanges {
       (err) => console.log(err)
     );
   }
+
+  // protected setLike() {
+  //   this.likeService.getLikeData().subscribe((res) => {
+  //     console.log(res);
+  //   });
+  // }
 }

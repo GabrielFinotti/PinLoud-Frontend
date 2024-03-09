@@ -2,7 +2,12 @@
 <div class="d-lg-flex gap-lg-4">
   <div id="imgData" class="mb-4 mb-lg-0">
     <img class="w-100 mb-2" [src]="pinData.image" [alt]="pinData.title" />
-    <h1 class="fs-2 fw-bold mb-3">{{ pinData.title }}</h1>
+    <div id="groupTitleAndLike" class="d-flex justify-content-between">
+      <h1 class="fs-2 fw-bold mb-3">{{ pinData.title }}</h1>
+      <!-- <button class="me-3 mb-3" type="button" (click)="setLike()">
+        <img src="../../../../assets/icons/dislike-icon.svg" alt="" />
+      </button> -->
+    </div>
     <h2 class="fs-4 fw-medium mb-4">{{ pinData.description }}</h2>
     <div class="d-flex flex-wrap gap-2">
       @for (tag of pinData.ideas; track $index) {

@@ -18,6 +18,17 @@ div {
         color: $primary-text-color;
       }
     }
+
+    #groupTitleAndLike {
+      button {
+        background: none;
+        border: 0;
+
+        img {
+          width: 30px;
+        }
+      }
+    }
   }
 
   #userData {
