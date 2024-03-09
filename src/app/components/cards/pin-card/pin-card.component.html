@@ -1,8 +1,10 @@
-@for (pin of pinList; track $index) {
+@if (pinList) { @for (pin of pinList; track $index) {
 <div (click)="sendPinId(pin.id)">
   <img [src]="pin.image" [alt]="pin.title" />
 </div>
 } @empty {
+<p class="fs-5 text-nowrap">Nenhum pin Encontrado!</p>
+} } @else {
 <div class="placeholder-glow w-100">
   <span class="placeholder w-100"></span>
 </div>
