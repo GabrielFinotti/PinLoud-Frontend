@@ -49,7 +49,11 @@ export class PinCreateFormComponent implements OnInit {
         ],
       ],
       description: ['', [Validators.required, Validators.maxLength(500)]],
-      tags: this.formBuilder.array(['', [Validators.required]]),
+      tags: this.formBuilder.array([
+        this.formBuilder.group({
+          id: ['', Validators.required],
+        }),
+      ]),
     });
   }
 
@@ -94,7 +98,11 @@ export class PinCreateFormComponent implements OnInit {
     tagsArray.clear();
 
     this.selectedTag.forEach((tag) => {
-      tagsArray.push(this.formBuilder.control(tag.id, [Validators.required]));
+      tagsArray.push(
+        this.formBuilder.group({
+          id: [tag.id, Validators.required],
+        })
+      );
     });
   }
 
@@ -151,7 +159,7 @@ export class PinCreateFormComponent implements OnInit {
         formData.append('title', pinData.title);
         formData.append('description', pinData.description);
         formData.append('image', pinData.image);
-        formData.append('ideas', JSON.stringify(pinData.ideas));
+        formData.append('ideas', JSON.stringify([pinData.ideas]));
 
         if (typeof pinData.user == 'number') {
           formData.append('user', pinData.user.toString());
@@ -160,7 +168,13 @@ export class PinCreateFormComponent implements OnInit {
 
           return;
         }
-
+        console.log(
+          `Título: ${formData.get('title')}\nDecrição: ${formData.get(
+            'description'
+          )}\n Image: ${formData.get('image')}\n Ideas: ${formData.getAll(
+            'ideas'
+          )}`
+        );
         this.pinsService.createPin(formData).subscribe(
           (res) => {
             alert('Imagem enviada com sucesso!');
