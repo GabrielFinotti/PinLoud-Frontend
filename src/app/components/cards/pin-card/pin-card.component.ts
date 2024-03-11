@@ -32,5 +32,12 @@ export class PinCardComponent implements OnInit {
 
   protected sendPinId(id: number) {
     this.router.navigate(['pins/view/', id]);
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }, 10);
   }
 }
