@@ -11,9 +11,14 @@ export const userDataGuard: CanActivateFn = (route, state) => {
       return true;
     }
   }
+
   router.navigateByUrl('/pins');
-  setTimeout(() => {
-    window.location.reload();
-  }, 1);
+
+  if (typeof window !== 'undefined') {
+    setTimeout(() => {
+      window.location.reload();
+    }, 1);
+  }
+  
   return false;
 };

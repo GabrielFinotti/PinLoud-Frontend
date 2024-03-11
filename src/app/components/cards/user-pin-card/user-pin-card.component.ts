@@ -12,6 +12,7 @@ import { PinsService } from '../../../shared/services/pin/pins.service';
 })
 export class UserPinCardComponent implements OnInit {
   protected userPins!: UserData;
+  private PinId!: number;
 
   constructor(
     private userService: UserService,
@@ -28,8 +29,12 @@ export class UserPinCardComponent implements OnInit {
     });
   }
 
-  protected deletePin(id: number) {
-    this.pinsService.deletePin(id).subscribe(
+  protected confDeletePin(id: number) {
+    this.PinId = id;
+  }
+
+  protected deletePin() {
+    this.pinsService.deletePin(this.PinId).subscribe(
       (res) => {
         alert('Imagem deletada com sucesso!');
         this.getUserPins();

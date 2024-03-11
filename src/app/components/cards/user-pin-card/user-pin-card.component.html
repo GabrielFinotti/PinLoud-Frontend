@@ -9,10 +9,14 @@
     type="button"
     data-bs-toggle="modal"
     data-bs-target="#staticModal"
+    (click)="confDeletePin(pin.id)"
   >
     <img src="../../../../assets/icons/excluir-icon.svg" alt="Excluir" />
   </button>
 </div>
+} @empty {
+<p class="fs-5 text-nowrap">Adicione uma imagem e encontre ela aqui!</p>
+}
 <div
   class="modal fade"
   id="staticModal"
@@ -43,7 +47,7 @@
           type="button"
           class="btn"
           data-bs-dismiss="modal"
-          (click)="deletePin(pin.id)"
+          (click)="deletePin()"
         >
           Confirmar
         </button>
@@ -51,9 +55,7 @@
     </div>
   </div>
 </div>
-} @empty {
-<p class="fs-5 text-nowrap">Adicione uma imagem e encontre ela aqui!</p>
-} } @else {
+} @else {
 <div class="placeholder-glow w-100">
   <span class="placeholder w-100"></span>
 </div>
