@@ -168,13 +168,6 @@ export class PinCreateFormComponent implements OnInit {
 
           return;
         }
-        console.log(
-          `Título: ${formData.get('title')}\nDecrição: ${formData.get(
-            'description'
-          )}\n Image: ${formData.get('image')}\n Ideas: ${formData.getAll(
-            'ideas'
-          )}`
-        );
         this.pinsService.createPin(formData).subscribe(
           (res) => {
             alert('Imagem enviada com sucesso!');
@@ -184,6 +177,7 @@ export class PinCreateFormComponent implements OnInit {
             alert(
               'Erro ao enviar imagem, verifique os campos e tente novamente!'
             );
+            console.log(err);
           }
         );
       }
