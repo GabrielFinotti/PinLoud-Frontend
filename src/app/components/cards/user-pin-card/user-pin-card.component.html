@@ -1,9 +1,9 @@
 @if (userPins) { @for (pin of userPins.pins; track $index) {
 <div class="img-card position-relative">
   <img [id]="pin.id" [src]="pin.image" [alt]="pin.title" />
-  <button class="edit position-absolute" type="button">
+  <!-- <button class="edit position-absolute" type="button">
     <img src="../../../../assets/icons/editar-icon.svg" alt="Editar" />
-  </button>
+  </button> -->
   <button
     class="delete position-absolute"
     type="button"
