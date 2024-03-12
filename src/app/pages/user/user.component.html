@@ -2,14 +2,24 @@
   @if (userData) {
   <section id="userData" class="d-flex flex-column flex-md-row gap-md-5 mb-4">
     <div class="d-flex flex-column align-items-center gap-2">
-      <img
-        [src]="
-          userData.user.profile_picture
-            ? userData.user.profile_picture
-            : '../../../assets/icons/user-icon.svg'
-        "
-        [alt]="userData.user.username"
-      />
+      <label for="userImg">
+        <img
+          [src]="
+            userData.user.profile_picture
+              ? userData.user.profile_picture
+              : '../../../assets/icons/user-icon.svg'
+          "
+          [alt]="userData.user.username"
+        />
+      </label>
+      <form [formGroup]="userImg" class="d-none">
+        <input
+          id="userImg"
+          class="d-none"
+          type="file"
+          (change)="editUserImg($event)"
+        />
+      </form>
       <p class="fs-5 fw-bold">{{ userData.user.username }}</p>
     </div>
     <div id="bio" class="p-2 p-md-4 w-100">
