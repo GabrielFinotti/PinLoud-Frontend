@@ -20,7 +20,9 @@
           (change)="editUserImg($event)"
         />
       </form>
-      <p class="fs-5 fw-bold">{{ userData.user.username }}</p>
+      <p class="fs-5 fw-bold">
+        {{ userData.user.username ? userData.user.username : "Usuário" }}
+      </p>
     </div>
     <div id="bio" class="p-2 p-md-4 w-100">
       <h5 class="fw-bold">Descrição</h5>

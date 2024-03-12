@@ -59,7 +59,9 @@
           [routerLink]="['/account/user']"
           routerLinkActive="link-actived"
         >
-          <span>{{ userImage.user.username }}</span>
+          <span>{{
+            userImage.user.username ? userImage.user.username : "Usuário"
+          }}</span>
           <img
             class="d-none d-lg-block position-relative"
             [src]="
