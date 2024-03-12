@@ -19,14 +19,15 @@ import {
 })
 export class UserComponent implements OnInit {
   protected userData!: UserData;
-  protected userImg!: FormGroup;
+  protected userFormUpdateData!: FormGroup;
 
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder
   ) {
-    this.userImg = this.formBuilder.group({
-      imgProfile: [null, [Validators.required]],
+    this.userFormUpdateData = this.formBuilder.group({
+      imgProfile: [null],
+      updateBio: ['', [Validators.required, Validators.maxLength(500)]],
     });
   }
 
@@ -51,7 +52,10 @@ export class UserComponent implements OnInit {
 
     if (fileType) {
       const formData = new FormData();
-      formData.append('profile_picture', this.userImg.value['imgProfile']);
+      formData.append(
+        'profile_picture',
+        this.userFormUpdateData.value['imgProfile']
+      );
 
       this.userService
         .userEditImgData(this.userData.user.id, formData)
@@ -70,7 +74,7 @@ export class UserComponent implements OnInit {
       const file = target.files[0];
 
       if (file.type.startsWith('image/') && !file.type.includes('gif')) {
-        this.userImg.get('imgProfile')?.setValue(file);
+        this.userFormUpdateData.get('imgProfile')?.setValue(file);
       } else {
         alert('O arquivo tem que ser uma imagem, e não pode ser um gif!');
         target.value = '';
@@ -80,5 +84,34 @@ export class UserComponent implements OnInit {
     }
 
     return true;
+  }
+
+  protected updateUserData() {
+    if (this.userFormUpdateData.valid) {
+      const userData: { bio: string } = {
+        bio: this.userFormUpdateData.value['updateBio'],
+      };
+
+      const verifyData = {
+        bio: userData.bio.trim(),
+      };
+
+      if (userData.bio !== verifyData.bio) {
+        alert('Os dados não podem inciar ou terminnar com espaçamentos!');
+        this.userFormUpdateData.reset();
+        return;
+      } else {
+        this.userService
+          .userEditUserData(this.userData.user.id, userData)
+          .subscribe(
+            (res) => {
+              alert('Dados atualizados com sucesso!');
+              this.userFormUpdateData.reset();
+              this.getUserData();
+            },
+            (err) => console.log(err)
+          );
+      }
+    }
   }
 }

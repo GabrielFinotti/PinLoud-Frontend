@@ -41,13 +41,13 @@ p {
     background-color: $secondary-bg-color;
 
     color: $primary-text-color;
-  }
 
-  .modal-footer {
-    :last-child {
-      background-color: $primary-btn-color;
+    .modal-footer {
+      :last-child {
+        background-color: $primary-btn-color;
 
-      color: $primary-text-color;
+        color: $primary-text-color;
+      }
     }
   }
 }

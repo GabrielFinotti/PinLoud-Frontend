@@ -12,25 +12,86 @@
           [alt]="userData.user.username"
         />
       </label>
-      <form [formGroup]="userImg" class="d-none">
-        <input
-          id="userImg"
-          class="d-none"
-          type="file"
-          (change)="editUserImg($event)"
-        />
-      </form>
+      <input
+        id="userImg"
+        class="d-none"
+        type="file"
+        (change)="editUserImg($event)"
+      />
       <p class="fs-5 fw-bold">
         {{ userData.user.username ? userData.user.username : "Usuário" }}
       </p>
     </div>
-    <div id="bio" class="p-2 p-md-4 w-100">
+    <div id="bio" class="position-relative p-2 p-md-4 w-100">
+      <button
+        class="border-0 d-flex position-absolute gap-2"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#staticUserDataModal"
+      >
+        <span>Editar</span>
+        <img src="../../../assets/icons/editar-icon.svg" alt="Editar" />
+      </button>
       <h5 class="fw-bold">Descrição</h5>
       <p class="overflow-y-auto">
         {{
           userData.user.bio ? userData.user.bio : "Fale um pouco sobre você!"
         }}
       </p>
+    </div>
+  </section>
+  <section id="updateData">
+    <div
+      id="staticUserDataModal"
+      class="modal fade"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title h4">Edite seus dados!</h1>
+            <button
+              class="btn-close btn-close-white"
+              type="menu"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              [formGroup]="userFormUpdateData"
+              id="updateUserData"
+              class="d-flex flex-column gap-3"
+              (ngSubmit)="updateUserData()"
+            >
+              <!-- <input
+                type="text"
+                placeholder="Edite seu nome de usuário"
+                formControlName="updateUsername"
+              /> -->
+              <textarea
+                placeholder="Edite sua descrição"
+                formControlName="updateBio"
+              ></textarea>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="border-0 btn" type="button" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button
+              class="border-0 btn btn-light"
+              type="submit"
+              data-bs-dismiss="modal"
+              [disabled]="userFormUpdateData.invalid"
+              (click)="updateUserData()"
+            >
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   }

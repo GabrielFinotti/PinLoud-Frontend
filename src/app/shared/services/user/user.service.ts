@@ -53,4 +53,18 @@ export class UserService {
       headers,
     });
   }
+
+  public userEditUserData(id: number, userData: { bio: string }) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`,
+    });
+
+    return this.http.put(
+      `${this.url}/accounts/user/edit/${id}`,
+      {
+        bio: userData.bio,
+      },
+      { headers }
+    );
+  }
 }
