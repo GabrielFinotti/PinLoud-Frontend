@@ -54,7 +54,7 @@ export class UserComponent implements OnInit {
       formData.append('profile_picture', this.userImg.value['imgProfile']);
 
       this.userService
-        .userEditData(this.userData.user.id, formData)
+        .userEditImgData(this.userData.user.id, formData)
         .subscribe((res) => {
           alert('Imagem de usuário alterada com sucesso!');
 

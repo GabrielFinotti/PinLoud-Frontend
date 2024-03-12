@@ -44,7 +44,7 @@ export class UserService {
     return this.http.get<UserData>(`${this.url}/accounts/user/`, { headers });
   }
 
-  public userEditData(id: number, formData: FormData) {
+  public userEditImgData(id: number, formData: FormData) {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.token}`,
     });
