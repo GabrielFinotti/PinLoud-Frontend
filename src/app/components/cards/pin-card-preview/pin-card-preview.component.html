@@ -27,7 +27,11 @@
       />
       <p class="fs-4 m-0 fw-bold">{{ pinData.user.username }}</p>
     </div>
-    <button class="d-block m-auto m-lg-0 p-2 w-100" type="button">
+    <button
+      class="d-block m-auto m-lg-0 p-2 w-100"
+      type="button"
+      (click)="imgDownload()"
+    >
       <p class="fs-3 m-0">Baixar</p>
     </button>
   </div>

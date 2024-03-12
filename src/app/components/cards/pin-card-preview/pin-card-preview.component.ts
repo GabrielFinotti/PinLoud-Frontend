@@ -37,4 +37,20 @@ export class PinCardPreviewComponent implements OnChanges {
   //     console.log(res);
   //   });
   // }
+
+  protected imgDownload() {
+    fetch(this.pinData.image)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = this.pinData.title;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      })
+      .catch((err) => console.error(`Erro ao baixar a imagem: ${err}`));
+  }
 }
