@@ -51,6 +51,8 @@ export class PinCardPreviewComponent implements OnChanges {
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
       })
-      .catch((err) => console.error(`Erro ao baixar a imagem: ${err}`));
+      .catch((err) =>
+        alert('Erro ao tentar baixar a imagem, tente novamente mais tarde!')
+      );
   }
 }
