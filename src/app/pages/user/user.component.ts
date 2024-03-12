@@ -73,6 +73,7 @@ export class UserComponent implements OnInit {
         this.userImg.get('imgProfile')?.setValue(file);
       } else {
         alert('O arquivo tem que ser uma imagem, e não pode ser um gif!');
+        target.value = '';
 
         return false;
       }
